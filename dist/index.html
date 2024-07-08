@@ -1,2 +1,163 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/favicon-32x32.png"><meta name="generator" content="Astro v4.11.3"><title>Masterfuel</title><style>html{font-family:system-ui,sans-serif;background:#575555;background-size:224px}main[data-astro-cid-j7pv25f6]{text-align:center;margin:auto;padding:1rem;width:800px;max-width:calc(100% - 2rem);color:#fff;font-size:20px;line-height:1.6}
-</style></head> <body>  <main data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>Site em Manutenção.</h1> </main>  </body></html> 
+<!DOCTYPE html><html lang="pt-br"> <head><meta charset="UTF-8"><meta name="description" content=""><meta name="keywords" content=""><meta name="viewport" content="width=device-width"><title>Masterfuel</title><!-- Favicons --><link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png"><link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" sizes="180x180"><link rel="manifest" href="/assets/favicons/manifest.json"><link rel="”canonical”" href=""><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"><!-- Icons --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Bootstrap Css --><link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css"><!-- Vendor Css --><link rel="stylesheet" href="/assets/vendor/splide/splide.min.css"><!-- Bootstrap Js --><script type="module" src="/assets/bootstrap/bootstrap.bundle.min.js"></script><!-- Vendor JS --><script src="/assets/vendor/splide/splide.min.js"></script><script src="/assets/vendor/fancybox/fancybox.umd.js"></script><script src="/assets/vendor/purify.min.js"></script><link rel="stylesheet" href="/_astro/index.CNyARrbp.css"></head><body> <header id="header" class="header fixed-top"> <div class="container "> <nav class="main-nav navbar navbar-expand-md" role="navigation"> <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-title">Menu</span> <span class="navbar-toggler-icon"></span> </button> <div id="navbar-collapse" class="navbar-collapse collapse text-center justify-content-center"> <ul class="nav navbar-nav"> <li class="nav-item"> <a class="nav-link" href="#home"> Home </a> </li><li class="nav-item"> <a class="nav-link" href="#produtos"> Produtos </a> </li><li class="nav-item"> <a class="nav-link" href="#suporte"> Suporte </a> </li><li class="nav-item"> <a class="nav-link" href="https://masterfuel.myshopify.com/" target="_blank"> <i class="bi bi-bag-check"></i> <span class="me-1">Comprar</span> </a> </li><li class="nav-item"> <a class="nav-link" href="#contato"> Contato </a> </li> </ul> </div> </nav> </div> </header> <script>
+    window.addEventListener('scroll', navAnimation)
+
+    function navAnimation() {
+        const header = document.getElementById('header')
+        const scrollTop = window.scrollY
+
+        if (scrollTop > 20) {
+            header?.classList.add('header-scrolled')
+        } else {
+            header?.classList.remove('header-scrolled')
+        }
+    }
+</script>  <main class="main-content"> <section id="home" class="section home-section"> <div class="home-carousel-holder"> <div id="home-carousel" class="home-carousel carousel slide carousel-fade" data-bs-ride="carousel"> <div class="carousel-inner carousel-zoom"> <div class="carousel-item slide-img-cover active" style="background-image: url(/assets/images/bg.jpg);"> <div class="d-flex align-items-center justify-content-center min-vh-100"></div> </div> </div> <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> </div> </div> <div class="overlay-mask"></div> <div class="container text-center home-content"> <h1 class="logo-home" style="background-image: url(/assets/images/logo.png);"></h1> <div class="tagline">sua nova injeção e ignição eletrônica programável!</div> </div> </section> <section id="produtos" class="section section-grey  text-center"> <h2 class="section-title">Produtos</h2> <article class="splide splide-default" id="splide-produtos-index"> <div class="splide__track"> <ul class="splide__list"> <li class="splide__slide item-box-mask"> <h4 class="mb-0">PSA10</h4> <p class="mb-1">Sensor de pressão 10 bar</p> <div class="item-inner shadow text-center bg-white"> <a data-bs-toggle="modal" data-bs-target="#modal-PSA10"> <img class="img-fluid" src="/assets/images/produtos/PSA10/slider-PSA10.jpg" alt="PSA10"> <div class="mask"> <div class="mask-inner"> <p class="content-title">PSA10</p> <p class="content-desc">Sensor de pressão 10 bar</p> <div class="d-flex gap-2"> <button type="button" class="btn btn-primary btn-cta">Saiba +</button> <!--
+                                        <a class="btn btn-primary btn-cta" href="https://masterfuel.myshopify.com/products/PSA10" target="_blank">
+                                            <i class="bi bi-bag-check"></i>
+                                            <span class="ms-1">Comprar</span>
+                                        </a>
+                                        --> </div> </div> </div> </a> </div> </li> </ul> </div><!-- splide__track --> </article><!-- splide --> <div class="mt-4"> <a class="btn btn-ghost-primary btnShowModal" data-show-modal="modal-prod-all">Veja Todos Produtos</a> </div> </section> <div id="modal-prod-all" class="modal modal-info modalBig fade" tabindex="-1" aria-labelledby="infoModalLabel-prod-todos" aria-hidden="true" aria-modal="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h2 class="modal-title" id="infoModalLabel-prod-todos">Todos os Produtos</h2> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <section class="section section-grey text-center"> <ul class="row justify-content-center list-unstyled m-0"> <li class="col-xl-3 col-lg-6 col-md-6 col-sm-12 item-box-mask"> <h4 class="mb-0">PSA10</h4> <p class="mb-1" style="min-height: 3rem;">Sensor Pressão 10 bar</p> <div class="item-inner shadow text-center bg-white mb-2"> <a class="btnShowModal" data-show-modal="modal-PSA10"> <img class="img-fluid" src="/assets/images/produtos/PSA10/slider-PSA10.jpg" alt="PSA10"> <div class="mask"> <div class="mask-inner"> <span class="content-title">PSA10</span> <span class="content-desc">Sensor Pressão 10 bar</span> </div> </div> </a> </div> <div class="d-flex justify-content-center gap-2"> <button type="button" data-show-modal="modal-PSA10" class="btnShowModal btn btn-primary">Saiba +</button> <!--
+                                <a
+                                    class="btn btn-primary"
+                                    href="https://masterfuel.myshopify.com/products/wbmf"
+                                    target="_blank">
+                                    <i class="bi bi-bag-check"></i>
+                                    <span class="ms-1">Comprar</span>
+                                </a>
+                                --> </div> </li> </ul> </section> </div> </div> </div> </div> <div id="modal-PSA10" class="modal modal-info modalBig fade" tabindex="-1" aria-labelledby="infoModalLabel-PSA10" aria-hidden="true" aria-modal="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <div class="row"> <div class="col-lg-5 mb-7 mb-lg-0"> <section class="section section-grey text-center h-100"> <article class="splide splide-default" id="splide-prod-PSA10"> <div class="splide__track"> <ul class="splide__list"> <li class="splide__slide item-box-mask"> <h4>PSA10</h4> <div class="item-inner" data-aos="flip-right" data-aos-duration="1000"> <a class="shadow text-center" data-fancybox="gallery-PSA10" href="/assets/images/produtos/PSA10/big/01.jpg" alt="Sensor Pressão 10 bar"> <img class="img-fluid" src="/assets/images/produtos/PSA10/mini/01.jpg" alt="Sensor Pressão 10 bar"> <div class="mask"> <span class="mask-inner"> <span class="btn btn-primary"> <i class="bi bi-zoom-in"></i> </span> </span> </div> </a> </div> </li> <li class="splide__slide item-box-mask"> <h4>PSA10</h4> <div class="item-inner" data-aos="flip-right" data-aos-duration="1000"> <a class="shadow text-center" data-fancybox="gallery-PSA10" href="/assets/images/produtos/PSA10/big/02.jpg" alt="Sensor Pressão 10 bar"> <img class="img-fluid" src="/assets/images/produtos/PSA10/mini/02.jpg" alt="Sensor Pressão 10 bar"> <div class="mask"> <span class="mask-inner"> <span class="btn btn-primary"> <i class="bi bi-zoom-in"></i> </span> </span> </div> </a> </div> </li> <li class="splide__slide item-box-mask"> <h4>PSA10</h4> <div class="item-inner" data-aos="flip-right" data-aos-duration="1000"> <a class="shadow text-center" data-fancybox="gallery-PSA10" href="/assets/images/produtos/PSA10/big/03.jpg" alt="Sensor Pressão 10 bar"> <img class="img-fluid" src="/assets/images/produtos/PSA10/mini/03.jpg" alt="Sensor Pressão 10 bar"> <div class="mask"> <span class="mask-inner"> <span class="btn btn-primary"> <i class="bi bi-zoom-in"></i> </span> </span> </div> </a> </div> </li> <li class="splide__slide item-box-mask"> <h4>PSA10</h4> <div class="item-inner" data-aos="flip-right" data-aos-duration="1000"> <a class="shadow text-center" data-fancybox="gallery-PSA10" href="/assets/images/produtos/PSA10/big/04.jpg" alt="Sensor Pressão 10 bar"> <img class="img-fluid" src="/assets/images/produtos/PSA10/mini/04.jpg" alt="Sensor Pressão 10 bar"> <div class="mask"> <span class="mask-inner"> <span class="btn btn-primary"> <i class="bi bi-zoom-in"></i> </span> </span> </div> </a> </div> </li> </ul> </div><!-- splide__track --> </article><!-- splide --> </section> </div> <div class="col-lg-7 d-flex flex-column"> <div class="ps-lg-4 flex-grow-1"> <div class="mb-6"> <h2>PSA10</h2> <h5>Sensor Pressão 10 bar</h5> <p> <img src="/assets/images/produtos/PSA10/grafico.jpg"> </p> <hr class="my-3"> <h5>Características:</h5> <ul> <li>Sinal de Saída: 1 a 5V</li> <li>Conexão: 1/8 ”NPT</li> <li>Faixa de Pressão: 0 a 10bar</li> <li>Tensão de Alimentação: 12V</li> <li>Corpo em aço inox e IP67</li> </ul> </div> </div> <hr> <div class="d-flex justify-content-end"> <!--
+                            <a
+                                class="btn btn-primary"
+                                href="https://masterfuel.myshopify.com/products/wbmf"
+                                target="_blank">
+                                <i class="bi bi-bag-check"></i>
+                                <span class="ms-1">Comprar</span>
+                            </a>
+                            --> </div> </div> </div> </div> </div> </div> </div> <script>
+	const btnShowModalAll = document.querySelectorAll('.btnShowModal')
+
+	btnShowModalAll.forEach(btn => {
+		btn.addEventListener('click', event => {
+			event.preventDefault();
+			event.stopPropagation();
+
+			new bootstrap.Modal(document.getElementById(btn.dataset.showModal), {
+				keyboard: true
+			}).show();
+		});
+	});
+
+	addEventListener('load', () => {
+		new Splide( '#splide-produtos-index', {
+			gap    : '1.5rem',
+
+			padding: {
+				right: '2rem',
+				left : '2rem',
+			},
+
+			perPage: 3,
+			rewind : true,
+
+			breakpoints: {
+				1500: {
+					perPage: 3,
+				},
+				1000: {
+					perPage: 2,
+				},
+				768: {
+					perPage: 1,
+				},
+			}
+		}).mount();
+	})
+</script> <script>
+	addEventListener('load', () => {
+		new Splide( '#splide-prod-PSA10', {
+			gap    : '2.5rem',
+
+			padding: {
+				right: '2rem',
+				left : '2rem',
+			},
+
+			perPage: 1,
+			rewind : true,
+
+			breakpoints: {
+				1500: {
+					perPage: 1,
+				},
+				1000: {
+					perPage: 1,
+				},
+				768: {
+					perPage: 1,
+				},
+			}
+		}).mount();
+	})
+</script> <section id="suporte" class="section text-center" data-astro-cid-7r72g6il> <div class="container" data-astro-cid-7r72g6il> <h2 class="section-title" data-astro-cid-7r72g6il>Suporte</h2> <div class="section-intro ms-auto me-auto" data-astro-cid-7r72g6il> <!-- Abaixo você encontra os manuais e diagramas elétricos dos nossos produtos. --> </div> <div class="members-block" data-astro-cid-7r72g6il> <div class="row justify-content-center" data-astro-cid-7r72g6il> <!--
+                <div class="col-xl-3 col-lg-6 col-md-6 mb-4">
+                    <a class="item-box" data-bs-toggle="modal" data-bs-target="#modalSuporteDiagraEletrico-mf3s"
+                        href="#">
+                        <div class="content-img">
+                            <img class="img-fluid"
+                                src="https://masterfuel.com.br/assets/app/images/produtos/MF3S/slider-MF3S.jpg" alt="">
+                        </div>
+                        <div class="content-title">Diagrama Elétrico MF3S</div>
+                        <div class="content-desc">
+                            Conheça o diagrama elétrico copleto:<br>
+                            <ul class="text-start">
+                                <li>Cor do Fiação</li>
+                                <li>Pinos</li>
+                                <li>Ligações</li>
+                                <li>Observações</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+                --> </div><!--//row--> </div><!--//members-block--> </div><!--//container--> </section>  <!--
+<div id="modalSuporteDiagraEletrico-mf3s" class="modal modal-info fade" tabindex="-1"
+    aria-labelledby="modalSuporteDiagraEletrico-mf3sLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-suporte">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalSuporteDiagraEletrico-mf3sLabel">Diagrama Elétrico MF3S</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <iframe src="https://masterfuel.com.br/assets/app/manuais/Diagrama_eletrico.pdf"></iframe>
+
+                <div class="d-flex justify-content-end">
+                    <a class="btn btn-success" href="https://masterfuel.com.br/assets/app/manuais/Diagrama_eletrico.pdf"
+                        download="Diagrama_eletrico">
+                        <i class="bi bi-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+--> <section id="contato" class="section contact-section"> <div class="container"> <div class="text-center"> <h2 class="section-title">Contato</h2> <div class="section-intro center-block">
+Estamos abertos para esclarecer quaisquer dúvidas e conversar um pouco mais sobre nós.
+</div> <div class="card shadow-lg mb-5"> <div class="card-body text-success"> <div class="row mb-2"> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-geo-alt h4 mb-2"></i> <h6 class="text-dark mb-0">Endereço</h6> <p class="mb-0">
+Av. Vereador Abel Ferreira, 2730
+<br>
+Bairro Chácara Mafalda
+<br>
+São Paulo / SP • CEP.: 03340-000
+</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-envelope h4 mb-2"></i> <h6 class="text-dark mb-0">E-mail</h6> <p class="mb-0">masterfuel@masterfuel.com.br</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-phone h4 mb-2"></i> <h6 class="text-dark mb-0">Telefone</h6> <p class="mb-0">(11) 9788-72083</p> </div> </article> </div> <hr> <div class="d-flex justify-content-center flex-wrap"> <a class="text-success text-center py-3 px-5" href="https://www.instagram.com/Masterfuel.br/" target="_blank"> <i class="bi bi-instagram h4 mb-2"></i> <h6 class="text-dark mb-0">Instagram</h6> <p class="mb-0">Masterfuel.br</p> </a> <a class="text-success text-center py-3 px-5" href="https://www.facebook.com/profile.php?id=100088179866696" target="_blank"> <i class="bi bi-facebook h4 mb-2"></i> <h6 class="text-dark mb-0">Facebook</h6> <p class="mb-0">Master Fuel</p> </a> <a class="text-success text-center py-3 px-5" href="https://masterfuel.myshopify.com/" target="_blank"> <i class="bi bi-bag-check h4 mb-2"></i> <h6 class="text-dark mb-0">Loja Online</h6> <p class="mb-0">Master Fuel</p> </a> </div> </div> </div> </div> <div class="contact-block"> <div class="text-center"> <h2 class="section-title">Se preferir preencha nosso formulário</h2> </div> <form method="post" action="https://masterfuel.com.br/index.asp"> <section class="row"> <label class="col-md-6">Nome:
+<input type="text" name="nome" class="form-control" required=""> </label> <label class="col-md-6">E-mail
+<input type="email" name="email" class="form-control" required=""> </label> <label class="col-md-12">O que podemos ajudá-lo?
+<textarea name="mensagem" rows="5" class="form-control" required=""></textarea> </label> <div class="col-md-12 text-center"> <button type="submit" name="action" value="ok" class="btn btn-ghost-primary mt-4">Enviar mensagem</button> </div> </section> </form> </div><!--//contact-list--> </div><!--//containter--> </section> </main>  <footer class="footer" data-astro-cid-rsizgep5> <div class="container" data-astro-cid-rsizgep5> <div class="footer-content text-center" data-astro-cid-rsizgep5> <div class="copyright" data-astro-cid-rsizgep5>masterfuel.com.br - Todos os direitos reservados</div> </div> </div> </footer> <span class="btnScrollToTop" data-scroll="top" data-astro-cid-3f7myi5b> <i class="bi bi-arrow-up-circle" data-astro-cid-3f7myi5b></i> </span> <script>
+    addEventListener("DOMContentLoaded", function () {
+        const btnScrollToTop = document.querySelector('[data-scroll="top"]')
+
+        window.onscroll = () => {
+            window.scrollY > 10 ? (btnScrollToTop.style.opacity = 1) : (btnScrollToTop.style.opacity = 0)
+        }
+        btnScrollToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+</script>  </body></html>
