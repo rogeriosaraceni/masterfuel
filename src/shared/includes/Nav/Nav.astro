@@ -1,0 +1,88 @@
+---
+import './styles.css'
+
+const navLinks = [
+    {
+        name: 'Home',
+        href: '#home'
+    },
+    {
+        name: 'Produtos',
+        href: '#produtos'
+    },
+    {
+        name: 'Suporte',
+        href: '#suporte'
+    },
+    {
+        name: 'Comprar',
+        href: 'https://masterfuel.myshopify.com/',
+        external: true, 
+        icon: "bi bi-bag-check"
+    },
+    {
+        name: 'Contato',
+        href: '#contato'
+    }
+]
+---
+
+<header id="header" class="header fixed-top">
+    <div class="container ">
+        <nav class="main-nav navbar navbar-expand-md" role="navigation">
+            <button 
+                class="navbar-toggler navbar-dark" 
+                type="button" 
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar-collapse" 
+                aria-controls="navbar-collapse" 
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="toggle-title">Menu</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navbar-collapse" class="navbar-collapse collapse text-center justify-content-center">
+                <ul class="nav navbar-nav">
+                    {
+                        navLinks.map(link => (
+                            <li class="nav-item">
+                                {
+                                    link.external ? 
+                                    (
+                                        <a class="nav-link" href={link.href} target="_blank">
+                                            <i class={link.icon}></i>
+                                            <span class="me-1">{link.name}</span>
+                                        </a>
+                                    ) : 
+                                    
+                                    (
+                                        <a class="nav-link" href={link.href}>
+                                            {link.name}
+                                        </a>
+                                    )
+                                }
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script is:inline>
+    window.addEventListener('scroll', navAnimation)
+
+    function navAnimation() {
+        const header = document.getElementById('header')
+        const scrollTop = window.scrollY
+
+        if (scrollTop > 20) {
+            header?.classList.add('header-scrolled')
+        } else {
+            header?.classList.remove('header-scrolled')
+        }
+    }
+</script>

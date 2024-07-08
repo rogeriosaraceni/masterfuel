@@ -1,22 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import SectionHome from './_section-home.astro';
+import SectionProdutos from './_section-produtos.astro';
+import SectionSuporte from './_section-suporte.astro';
+import SectionContato from './_section-contato.astro';
 ---
 
-<Layout title="Masterfuel">
-	<main>
-		<h1>Site em Manutenção.</h1>		
+<Layout>
+	<main class="main-content">
+		<SectionHome />
+		<SectionProdutos />
+		<SectionSuporte />
+		<SectionContato />
 	</main>
 </Layout>
-
-<style>
-	main {
-		text-align: center;
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-</style>
