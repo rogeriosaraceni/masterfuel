@@ -1,27 +1,5 @@
 ---
-   addEventListener('load', function () {
-        setTimeout(function () {
-            document.getElementById('preloader-page')?.classList.add('preloader-hide');
-        }, 5)
-    })
 ---
-<div class="preloader" id="preloader-page">
-    <div class="content-preloader">
-        <svg class="loader-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
-            <circle cx="170" cy="170" r="140" stroke="#5ba34c"/>
-            <circle cx="170" cy="170" r="115" stroke="#47843b"/>
-            <circle cx="170" cy="170" r="90" stroke="#33602a"/>
-        </svg>
-
-        <div class="text">
-            <span>
-                <h2>
-                    <i class="text-success">MASTER</i><i class="text-white">FUEL</i>
-                </h2>
-            </span>
-        </div>
-    </div>
-</div>
 
 <style>
     .preloader {
@@ -117,3 +95,29 @@
         }
     }
 </style>
+
+<div class="preloader" id="preloader-page">
+    <div class="content-preloader">
+        <svg class="loader-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
+            <circle cx="170" cy="170" r="140" stroke="#5ba34c"/>
+            <circle cx="170" cy="170" r="115" stroke="#47843b"/>
+            <circle cx="170" cy="170" r="90" stroke="#33602a"/>
+        </svg>
+
+        <div class="text">
+            <span>
+                <h2>
+                    <i class="text-success">MASTER</i><i class="text-white">FUEL</i>
+                </h2>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+   addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('preloader-page')?.classList.add('preloader-hide');
+        }, 5)
+    })
+</script>

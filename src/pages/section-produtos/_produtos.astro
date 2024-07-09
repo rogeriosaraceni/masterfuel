@@ -1,0 +1,36 @@
+---
+import ContentSplide from "./_content-splide.astro";
+import ContentModalAll from "./_content-modal-all.astro";
+import ContentModalPSA10 from "./_content-modal-PSA10.astro";
+
+---
+
+<section id="produtos" class="section section-grey  text-center">
+    <h2 class="section-title">Produtos</h2>
+
+	<ContentSplide />
+
+    <div class="mt-4">
+        <a class="btn btn-ghost-primary" data-btn="showModal" data-show-modal="modal-prod-all">Veja Todos Produtos</a>
+    </div>
+</section>
+
+<ContentModalAll />
+<ContentModalPSA10 />
+
+<script is:inline>
+	const btnShowModalAll = document.querySelectorAll('[data-btn="showModal"]')
+
+	btnShowModalAll.forEach(btn => {
+		btn.addEventListener('click', event => {
+			event.preventDefault();
+			event.stopPropagation();
+
+			new bootstrap.Modal(document.getElementById(btn.dataset.showModal), {
+				keyboard: true
+			}).show();
+			console.log(document.getElementById(btn.dataset.showModal));
+
+		});
+	});
+</script>

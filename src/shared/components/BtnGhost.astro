@@ -1,0 +1,10 @@
+---
+interface Props {
+	type: "submit" | "reset" | "button",
+    name: string
+}
+
+const { type, name } = Astro.props
+---
+
+<button type{type} class="btn btn-ghost-primary">{name}</button>

@@ -1,0 +1,9 @@
+---
+interface Props {
+    name: string
+}
+
+const { name } = Astro.props
+---
+
+<a class="btn btn-ghost-primary" data-show-modal="modal-prod-all">{name}</a>
