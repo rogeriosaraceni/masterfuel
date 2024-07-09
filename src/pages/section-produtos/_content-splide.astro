@@ -12,7 +12,7 @@ import { allProducts } from '@data/products.js'
                         <p class="mb-1">{item.subtitle}</p>
 
                         <div class="item-inner shadow text-center bg-white">
-                            <a data-bs-toggle="modal" data-bs-target={`#${item.target}`}>
+                            <div role="button" data-bs-toggle="modal" data-bs-target={`#${item.target}`}>
                                 <img class="img-fluid" src={item.image} alt={item.alt} />
 
                                 <div class="mask pe-none">
@@ -30,7 +30,7 @@ import { allProducts } from '@data/products.js'
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </li>
                 ))

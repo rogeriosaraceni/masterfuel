@@ -5,6 +5,7 @@ import BtnLinkGhost from "@components/BtnLinkGhost.astro";
 import ContentModalAll from "./_content-modal-all.astro";
 import ContentModalPSA10 from "./_content-modal-PSA10.astro";
 import ContentModalTBI from "./_content-modal-TBI.astro";
+import BtnGhost from "@components/BtnGhost.astro";
 ---
 
 <section id="produtos" class="section section-grey  text-center">
@@ -13,7 +14,12 @@ import ContentModalTBI from "./_content-modal-TBI.astro";
 	<ContentSplide />
 
     <div class="mt-4">
-		<BtnLinkGhost dataBsToggle="modal" dataBsTarget="#modal-prod-all" name="Veja Todos Produtos" />
+		<BtnGhost 
+			type="button"
+			dataBsToggle="modal" 
+			dataBsTarget="#modal-prod-all" 
+			name="Veja Todos Produtos" 
+		/>
     </div>
 </section>
 
