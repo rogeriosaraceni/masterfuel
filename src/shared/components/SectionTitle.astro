@@ -1,4 +1,9 @@
 ---
+interface Props {
+    title: string,
+}
+
+const { title } = Astro.props
 ---
 
-<h2 class="section-title">{}</h2>
+<h2 class="section-title text-center">{title}</h2>
