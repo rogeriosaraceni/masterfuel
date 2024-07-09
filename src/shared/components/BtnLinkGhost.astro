@@ -1,9 +1,11 @@
 ---
 interface Props {
-    name: string
+    name: string,
+    dataBsToggle?: string,
+    dataBsTarget?: string,
 }
 
-const { name } = Astro.props
+const { name, dataBsToggle, dataBsTarget } = Astro.props
 ---
 
-<a class="btn btn-ghost-primary" data-show-modal="modal-prod-all">{name}</a>
+<a class="btn btn-ghost-primary" data-bs-toggle={dataBsToggle} data-bs-target={dataBsTarget}>{name}</a>

@@ -1,38 +1,40 @@
 ---
+import { allProducts } from '@data/products.js'
 ---
 
 <article class="splide splide-default mb-4" id="splide-produtos-index">
     <div class="splide__track">
         <ul class="splide__list">
-            <li class="splide__slide item-box-mask">
+            {
+                allProducts.map(item => (
+                    <li class="splide__slide item-box-mask">
+                        <h4 class="mb-0">{item.title}</h4>
+                        <p class="mb-1">{item.subtitle}</p>
 
-                <h4 class="mb-0">PSA10</h4>
-                <p class="mb-1">Sensor de pressão 10 bar</p>
-                <div class="item-inner shadow text-center bg-white">
-                    <a data-bs-toggle="modal" data-bs-target="#modal-PSA10">
-                        <img class="img-fluid" src="./assets/images/produtos/PSA10/slider-PSA10.jpg" alt="PSA10">
+                        <div class="item-inner shadow text-center bg-white">
+                            <a data-bs-toggle="modal" data-bs-target={`#${item.target}`}>
+                                <img class="img-fluid" src={item.image} alt={item.alt} />
 
-                        <div class="mask">
-                            <div class="mask-inner">
-                                <p class="content-title">PSA10</p>
-                                <p class="content-desc">Sensor de pressão 10 bar</p>
+                                <div class="mask pe-none">
+                                    <div class="mask-inner">
+                                        <p class="content-title">{item.title}</p>
+                                        <p class="content-desc">{item.subtitle}</p>
 
-                                <div class="d-flex gap-2">
-                                    <button type="button" class="btn btn-primary btn-cta">Saiba +</button>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary btn-cta pe-auto">Saiba +</button>
 
-                                    <!--
-                                    <a class="btn btn-primary btn-cta" href="https://masterfuel.myshopify.com/products/PSA10" target="_blank">
-                                        <i class="bi bi-bag-check"></i>
-                                        <span class="ms-1">Comprar</span>
-                                    </a>
-                                    -->
+                                            <a class="btn btn-primary btn-cta pe-auto" href={item.linkShopify} target="_blank">
+                                                <i class="bi bi-bag-check"></i>
+                                                <span class="ms-1">Comprar</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-
-            </li>
+                    </li>
+                ))
+            }
         </ul>
     </div>
 </article>

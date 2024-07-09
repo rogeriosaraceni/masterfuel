@@ -1,14 +1,5 @@
 ---
-const allProducts = [
-    {
-        title: 'PSA10',
-        subtitle: 'Sensor Pressão 10 bar',
-        dataShowModal: 'modal-PSA10',
-        image: './assets/images/produtos/PSA10/slider-PSA10.jpg',
-        alt: 'PSA10',
-        linkShopify: 'https://masterfuel.myshopify.com/products/wbmf'
-    },
-]
+import { allProducts } from '@data/products.js'
 ---
 
 <div 
@@ -31,12 +22,12 @@ const allProducts = [
                         {
                             allProducts.map(item => (
                                 <li class="col-xl-3 col-lg-6 col-md-6 col-sm-12 item-box-mask">
-                            
                                     <h4 class="mb-0">{item.title}</h4>
                                     <p class="mb-1" style="min-height: 3rem;">{item.subtitle}</p>
                                     <div class="item-inner shadow text-center bg-white mb-2">
-                                        <a data-btn="showModal" data-show-modal={item.dataShowModal}>
-                                            <img class="img-fluid" src={item.image} alt={item.alt}>
+
+                                        <a data-btn="showModal" data-show-modal={item.target}>
+                                            <img class="img-fluid" src={item.image} alt={item.alt} />
 
                                             <div class="mask">
                                                 <div class="mask-inner">
@@ -48,15 +39,21 @@ const allProducts = [
                                     </div>
 
                                     <div class="d-flex justify-content-center gap-2">
-                                        <button type="button" data-btn="showModal" data-show-modal={item.dataShowModal} class="btn btn-primary">Saiba +</button>
+                                        <button 
+                                            type="button" 
+                                            data-btn="showModal" 
+                                            data-show-modal={item.target} 
+                                            class="btn btn-primary">Saiba +
+                                        </button>
 
-                                        <a
+                                        {/* <a
                                             class="btn btn-primary"
                                             href={item.linkShopify}
-                                            target="_blank">
+                                            target="_blank"
+                                        >
                                             <i class="bi bi-bag-check"></i>
                                             <span class="ms-1">Comprar</span>
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </li>
                             ))
@@ -68,3 +65,17 @@ const allProducts = [
     </div>
 </div>
 
+<script is:inline>
+	const btnShowModalAll = document.querySelectorAll('[data-btn="showModal"]')
+
+	btnShowModalAll.forEach(btn => {
+		btn.addEventListener('click', event => {
+			event.preventDefault()
+			event.stopPropagation()
+
+			new bootstrap.Modal(document.getElementById(btn.dataset.showModal), {
+				keyboard: true
+			}).show();
+		});
+	});
+</script>
