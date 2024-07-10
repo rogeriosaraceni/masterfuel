@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
     // Cabeçalhos do e-mail
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . $email . "\r\n"; // Remetente
+    $headers .= "From: " . $emailRemetente . "\r\n"; // Remetente
     $headers .= "Return-Path: " . $email . "\r\n"; // Return-path
 
     // Envio do e-mail
