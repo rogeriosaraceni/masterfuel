@@ -25,11 +25,11 @@
 
     	'Corpo da mensagem 
 
-    	texto = "<font family: arial>"
+    	texto = "<html><body>"
     	texto = texto & "<b>Nome:</b> "&request("nome") & "<br>"
     	texto = texto & "<b>E-mail:</b> "&request("email") & "<br><br>"
     	texto = texto & "<b>Mensagem:</b> "&request("mensagem") & ""
-    	texto = texto & "</font>"
+    	texto = texto & "</body></html>"
 
     	mail.body = texto
 
