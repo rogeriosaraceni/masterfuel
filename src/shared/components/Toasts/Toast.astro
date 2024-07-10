@@ -57,21 +57,19 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorCla
 </style>
 
 <script is:inline>
-    window.addEventListener('load', () => {
-        const showToasts = document.querySelectorAll('[data-toast-target]')
+    document.addEventListener('DOMContentLoaded', () => {
+        const toastType = localStorage.getItem('formSubmitted')
 
-        for(const item of showToasts){
-            item.addEventListener('submit', () => {
-                const target = item.getAttribute('data-toast-target')
-                const toastElement = document.querySelector(`[data-toast-type="${target}"]`)
-                
-                if (toastElement) {
-                    setTimeout(() => {
-                        const toast = new bootstrap.Toast(toastElement);
-                        toast.show();
-                    }, 3200);
-                }
-            })
+        if (toastType) {
+            // Seleciona e exibe o toast correto com base no tipo armazenado
+            const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
+
+            if (toastElement) {
+                const toast = new bootstrap.Toast(toastElement)
+                toast.show()
+            }
+            // Remove a flag do localStorage
+            localStorage.removeItem('formSubmitted')
         }
     })
 </script>

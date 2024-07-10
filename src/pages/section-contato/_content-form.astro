@@ -1,5 +1,4 @@
 ---
-import BtnGhost from "@components/BtnGhost.astro";
 import ToastEnv from '@components/Toasts/ToastEnv.astro';
 ---
 
@@ -28,8 +27,6 @@ import ToastEnv from '@components/Toasts/ToastEnv.astro';
         <div class="text-center">
             <button 
                 type="submit" 
-                name="action" 
-                value="ok" 
                 class="btn btn-ghost-primary"
                 data-btn="spinner"
                 data-toast-target="env"
@@ -52,13 +49,20 @@ import ToastEnv from '@components/Toasts/ToastEnv.astro';
     const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
 
     for(const btn of spinnerBtns){
-        btn.addEventListener('submit', () => {            
+        btn.addEventListener('click', (event) => {      
+            event.preventDefault()
+
             btn.classList.add('btn-spinner-disabled')
             btn.querySelector('.btn-spinner').classList.remove('d-none')
             
             setTimeout(() => {
+                const toastTarget = btn.getAttribute('data-toast-target')
+                // Define a flag no localStorage com o valor de data-toast-target
+                localStorage.setItem('formSubmitted', toastTarget)
+
                 btn.classList.remove('btn-spinner-disabled')
                 btn.querySelector('.btn-spinner').classList.add('d-none')
+                btn.closest('form').submit()
             }, 1000)
         })
     }

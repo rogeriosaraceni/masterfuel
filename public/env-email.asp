@@ -2,13 +2,13 @@
 
 <%
     'COMPONENTE DE ENVIO DE EMAIL
-    if request("action") = "ok" then
-		Dim emailFromAddAddress
+    if request("nome") <> "" and request("email") <> "" and request("mensagem") <> "" then
+		' Variaveis
+		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail
 
 		emailFromAddAddress = "dev@masterfuel.com.br"
 
 		' Obtendo e tratando o texto do textarea
-		Dim nome, email, mensagem, corpoEmail
 		nome = request("nome")
 		email = request("email")
 		mensagem = request("mensagem")
