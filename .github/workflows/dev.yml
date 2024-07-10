@@ -9,9 +9,16 @@ jobs:
   deploy:
     name: Deploy test website on push
     runs-on: ubuntu-latest
+
     steps:
     - name: Get latest code 
       uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
 
     - name: FTP Deploy Locaweb
       uses: locaweb/ftp-deploy@1.0.0
