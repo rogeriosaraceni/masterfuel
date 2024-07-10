@@ -22,14 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
     $headers .= "Return-Path: " . $emailRemetente . "\r\n"; // Return-path
 
     // Envio do e-mail
-    $envio = mail($email, $assunto, $corpo, $headers);
+    $envio = mail($emailRemetente, $assunto, $corpo, $headers);
 
     if ($envio) {
         // Redirecionamento para index.html
         header("Location: index.html");
         exit; // Certifique-se de parar a execução do script após o redirecionamento
     } else {
-        echo "A mensagem não pode ser enviada";
+        echo "Erro ao enviar e-mail: " . error_get_last()['message'];
     }
 }
 ?>
