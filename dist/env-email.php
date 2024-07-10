@@ -11,15 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
 
     // Construindo o corpo do e-mail em formato HTML
     $corpo = "<html><body>";
-    $corpo .= "<b>Nome:</b> " . $emailRemetente . "<br>";
-    $corpo .= "<b>E-mail:</b> " . $emailRemetente . "<br><br>";
+    $corpo .= "<b>Nome:</b> " . $nome . "<br>";
+    $corpo .= "<b>E-mail:</b> " . $email . "<br><br>";
     $corpo .= "<b>Mensagem:</b><br>" . $mensagem;
 
     // Cabeçalhos do e-mail
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . $email . "\r\n"; // Remetente
-    $headers .= "Return-Path: " . $email . "\r\n"; // Return-path
+    $headers .= "From: " . $emailRemetente . "\r\n"; // Remetente
+    $headers .= "Return-Path: " . $emailRemetente . "\r\n"; // Return-path
 
     // Envio do e-mail
     $envio = mail($email, $assunto, $corpo, $headers);
