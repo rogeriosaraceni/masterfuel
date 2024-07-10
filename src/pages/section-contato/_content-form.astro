@@ -52,7 +52,7 @@ import ToastEnv from '@components/Toasts/ToastEnv.astro';
     const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
 
     for(const btn of spinnerBtns){
-        btn.addEventListener('click', () => {            
+        btn.addEventListener('submit', () => {            
             btn.classList.add('btn-spinner-disabled')
             btn.querySelector('.btn-spinner').classList.remove('d-none')
             

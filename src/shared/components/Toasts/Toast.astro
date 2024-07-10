@@ -61,7 +61,7 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorCla
         const showToasts = document.querySelectorAll('[data-toast-target]')
 
         for(const item of showToasts){
-            item.addEventListener('click', () => {
+            item.addEventListener('submit', () => {
                 const target = item.getAttribute('data-toast-target')
                 const toastElement = document.querySelector(`[data-toast-type="${target}"]`)
                 

@@ -195,7 +195,7 @@ São Paulo / SP • CEP.: 03340-000
         const showToasts = document.querySelectorAll('[data-toast-target]')
 
         for(const item of showToasts){
-            item.addEventListener('click', () => {
+            item.addEventListener('submit', () => {
                 const target = item.getAttribute('data-toast-target')
                 const toastElement = document.querySelector(`[data-toast-type="${target}"]`)
                 
@@ -215,7 +215,7 @@ São Paulo / SP • CEP.: 03340-000
     const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
 
     for(const btn of spinnerBtns){
-        btn.addEventListener('click', () => {            
+        btn.addEventListener('submit', () => {            
             btn.classList.add('btn-spinner-disabled')
             btn.querySelector('.btn-spinner').classList.remove('d-none')
             
