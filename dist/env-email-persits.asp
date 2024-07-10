@@ -1,6 +1,6 @@
 <%
     response.Charset = "utf-8"
-    'COMPONENTE DE ENVIO DE EMAIL
+    //COMPONENTE DE ENVIO DE EMAIL
 
     if request("action") = "ok" then
 		Dim emailFromAddAddress
@@ -21,18 +21,19 @@
     	Mail.IsHTML = True 
     	Mail.Subject = "Formulário Site" 
 
-    	'Corpo da mensagem 
+    	//Corpo da mensagem 
 
-    	texto = "<font family: arial>"
+    	texto = "<html><body>"
     	texto = texto & "<b>Nome:</b> "&request("nome")&""
     	texto = texto & "<br>"
     	texto = texto & "<b>E-mail:</b> "&request("email")&""
     	texto = texto & "<br>"
     	texto = texto & "<br>"
     	texto = texto & "<b>Mensagem:</b> "&request("mensagem")&""
-    	texto = texto & "</font>"
+    	texto = texto & "</body></html>"
 
     	mail.body = texto
+		Mail.Charset = "utf-8"
 
     	On Error Resume Next 
 		Mail.Send 
