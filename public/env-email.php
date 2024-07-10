@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
     $headers .= "Return-Path: " . $emailRemetente . "\r\n"; // Return-path
 
     // Envio do e-mail
-    $envio = mail("masterfuel@masterfuel.com.br", $assunto, $corpo, $headers);
+    $envio = mail($emailRemetente, $assunto, $corpo, $headers);
 
     if ($envio) {
         // Redirecionamento para index.html
