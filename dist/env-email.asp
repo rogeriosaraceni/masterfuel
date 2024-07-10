@@ -1,13 +1,10 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001" %>
 
 <%
-    response.Charset = "utf-8"
     'COMPONENTE DE ENVIO DE EMAIL
-
     if request("action") = "ok" then
 		Dim emailFromAddAddress
 
-		//emailFromAddAddress = "masterfuel@masterfuel.com.br"
 		emailFromAddAddress = "dev@masterfuel.com.br"
 
 		' Obtendo e tratando o texto do textarea
@@ -16,9 +13,6 @@
 		email = request("email")
 		mensagem = request("mensagem")
 		
-		' Substituindo quebras de linha por <br> no texto da mensagem
-		mensagem = Replace(mensagem, vbCrLf, "<br>")
-
 		' Configurando o objeto de e-mail
     	Set Mail = Server.CreateObject("Persits.MailSender")
         
@@ -39,9 +33,6 @@
     	texto = texto & "</body></html>"
 
     	Mail.body = texto
-
-		' Configurando a codificação de caracteres UTF-8
-    	Mail.Charset = "utf-8"
 
     	On Error Resume Next 
 		Mail.Send 
