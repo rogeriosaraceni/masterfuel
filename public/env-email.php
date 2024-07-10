@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
 
     // Construindo o corpo do e-mail em formato HTML
     $corpo = "<html><body>";
-    $corpo .= "<b>Nome:</b> " . $nome . "<br>";
-    $corpo .= "<b>E-mail:</b> " . $email . "<br><br>";
+    $corpo .= "<b>Nome:</b> " . $emailRemetente . "<br>";
+    $corpo .= "<b>E-mail:</b> " . $emailRemetente . "<br><br>";
     $corpo .= "<b>Mensagem:</b><br>" . $mensagem;
 
     // Cabeçalhos do e-mail
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"]) && $_POST["a
     $headers .= "Return-Path: " . $email . "\r\n"; // Return-path
 
     // Envio do e-mail
-    $envio = mail($emailRemetente, $assunto, $corpo, $headers);
+    $envio = mail($email, $assunto, $corpo, $headers);
 
     if ($envio) {
         // Redirecionamento para index.html
