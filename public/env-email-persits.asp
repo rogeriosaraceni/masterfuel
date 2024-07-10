@@ -10,28 +10,38 @@
 		//emailFromAddAddress = "masterfuel@masterfuel.com.br"
 		emailFromAddAddress = "dev@masterfuel.com.br"
 
+		' Obtendo e tratando o texto do textarea
+		Dim nome, email, mensagem, corpoEmail
+		nome = request("nome")
+		email = request("email")
+		mensagem = request("mensagem")
+		
+		' Substituindo quebras de linha por <br> no texto da mensagem
+		mensagem = Replace(mensagem, vbCrLf, "<br>")
+
+		' Configurando o objeto de e-mail
     	Set Mail = Server.CreateObject("Persits.MailSender")
         
     	Mail.Host = "localhost"
     	Mail.From = ""&request("email")&""
-    	
     	Mail.MailFrom = emailFromAddAddress 
     	Mail.FromName = ""&request("nome")&"" 
-    	
     	Mail.AddAddress emailFromAddAddress
 
     	Mail.IsHTML = True 
     	Mail.Subject = "Formulário Site" 
 
-    	'Corpo da mensagem 
-
+    	' Construindo o corpo do e-mail em formato HTML
     	texto = "<html><body>"
     	texto = texto & "<b>Nome:</b> "&request("nome") & "<br>"
     	texto = texto & "<b>E-mail:</b> "&request("email") & "<br><br>"
     	texto = texto & "<b>Mensagem:</b> "&request("mensagem") & ""
     	texto = texto & "</body></html>"
 
-    	mail.body = texto
+    	Mail.body = texto
+
+		' Configurando a codificação de caracteres UTF-8
+    	Mail.Charset = "utf-8"
 
     	On Error Resume Next 
 		Mail.Send 
