@@ -1,0 +1,72 @@
+---
+import { string } from 'astro/zod'
+
+interface Props {
+   btnClass: string,
+   dataToastTarget: string,
+   title: string, 
+}
+
+const { btnClass, dataToastTarget, title } = Astro.props
+---
+
+<button 
+    type="submit" 
+    class={btnClass} 
+    data-btn="spinner"
+    data-toast-target={dataToastTarget}
+>
+    <span>{title}</span>       
+    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>  
+</button>
+
+<style>
+    .btn-spinner-disabled{
+        opacity: 0.8!important;
+        pointer-events: none!important; 
+    }
+</style>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+        const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
+
+        for(const btn of spinnerBtns) {
+            btn.addEventListener('click', (event) => {      
+
+                const nomeInput = document.querySelector('input[name="nome"]');
+                const emailInput = document.querySelector('input[name="email"]');
+                const mensagemInput = document.querySelector('textarea[name="mensagem"]');
+
+                // Expressão regular para validar formato de e-mail
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!nomeInput.value || !emailInput.value || !mensagemInput.value) {
+                    event.preventDefault(); // Impede o envio do formulário se os campos estiverem vazios
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                } 
+                
+                else if (!emailRegex.test(emailInput.value)) {
+                    event.preventDefault(); // Impede o envio do formulário se o formato do e-mail for inválido
+                    alert('Por favor, insira um e-mail válido.');
+                } 
+
+                else {
+                    event.preventDefault();
+                    btn.classList.add('btn-spinner-disabled');
+                    btn.querySelector('.btn-spinner').classList.remove('d-none');
+                    
+                    setTimeout(() => {
+                        const toastTarget = btn.getAttribute('data-toast-target');
+                        // Define uma flag no localStorage com o valor de data-toast-target
+                        localStorage.setItem('formSubmitted', toastTarget);
+
+                        btn.classList.remove('btn-spinner-disabled');
+                        btn.querySelector('.btn-spinner').classList.add('d-none');
+                        btn.closest('form').submit();
+                    }, 1000);
+                }                    
+            });
+        }
+    })
+</script>

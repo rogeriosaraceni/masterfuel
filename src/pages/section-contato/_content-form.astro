@@ -1,5 +1,6 @@
 ---
 import ToastEnv from '@components/Toasts/ToastEnv.astro';
+import ButtonSubmitSpinnerToast from '@components/ButtonSubmitSpinnerToast.astro';
 ---
 
 <ToastEnv />
@@ -12,58 +13,24 @@ import ToastEnv from '@components/Toasts/ToastEnv.astro';
     <form method="post" action="./env-email.asp">
         <section class="row mb-4">
             <label class="col-md-6">Nome:
-                <input type="text" name="nome" class="form-control" required="">
+                <input type="text" name="nome" class="form-control">
             </label>
 
             <label class="col-md-6">E-mail
-                <input type="email" name="email" class="form-control" required="">
+                <input type="email" name="email" class="form-control">
             </label>
 
             <label class="col-md-12">O que podemos ajudá-lo?
-                <textarea name="mensagem" rows="5" class="form-control" required=""></textarea>
+                <textarea name="mensagem" rows="5" class="form-control"></textarea>
             </label>
         </section>
         
         <div class="text-center">
-            <button 
-                type="submit" 
-                class="btn btn-ghost-primary"
-                data-btn="spinner"
-                data-toast-target="env"
-            >
-                <span>Enviar mensagem</span>       
-                <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>  
-            </button>
+            <ButtonSubmitSpinnerToast 
+                btnClass="btn btn-ghost-primary" 
+                dataToastTarget="env" 
+                title="Enviar mensagem" 
+            />
         </div>
     </form>
 </div>
-
-<style>
-    .btn-spinner-disabled{
-        opacity: 0.8!important;
-        pointer-events: none!important; 
-    }
-</style>
-
-<script is:inline>
-    const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
-
-    for(const btn of spinnerBtns){
-        btn.addEventListener('click', (event) => {      
-            event.preventDefault()
-
-            btn.classList.add('btn-spinner-disabled')
-            btn.querySelector('.btn-spinner').classList.remove('d-none')
-            
-            setTimeout(() => {
-                const toastTarget = btn.getAttribute('data-toast-target')
-                // Define a flag no localStorage com o valor de data-toast-target
-                localStorage.setItem('formSubmitted', toastTarget)
-
-                btn.classList.remove('btn-spinner-disabled')
-                btn.querySelector('.btn-spinner').classList.add('d-none')
-                btn.closest('form').submit()
-            }, 1000)
-        })
-    }
-</script>
