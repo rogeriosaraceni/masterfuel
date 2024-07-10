@@ -26,12 +26,9 @@
     	'Corpo da mensagem 
 
     	texto = "<font family: arial>"
-    	texto = texto & "<b>Nome:</b> "&request("nome")&""
-    	texto = texto & "<br>"
-    	texto = texto & "<b>E-mail:</b> "&request("email")&""
-    	texto = texto & "<br>"
-    	texto = texto & "<br>"
-    	texto = texto & "<b>Mensagem:</b> "&request("mensagem")&""
+    	texto = texto & "<b>Nome:</b> "&request("nome") & "<br>"
+    	texto = texto & "<b>E-mail:</b> "&request("email") & "<br><br>"
+    	texto = texto & "<b>Mensagem:</b> "&request("mensagem") & ""
     	texto = texto & "</font>"
 
     	mail.body = texto
