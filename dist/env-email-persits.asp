@@ -33,7 +33,7 @@
     	texto = texto & "</font>"
 
     	mail.body = texto
-		'Mail.Charset = "utf-8"
+		Mail.Charset = "utf-8"
 
     	On Error Resume Next 
 		Mail.Send 
