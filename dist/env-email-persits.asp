@@ -1,3 +1,5 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001" %>
+
 <%
     response.Charset = "utf-8"
     'COMPONENTE DE ENVIO DE EMAIL
@@ -33,7 +35,6 @@
     	texto = texto & "</font>"
 
     	mail.body = texto
-		'Mail.Charset = "utf-8"
 
     	On Error Resume Next 
 		Mail.Send 
