@@ -1,6 +1,9 @@
 ---
 import BtnGhost from "@components/BtnGhost.astro";
+import ToastEnv from '@components/Toasts/ToastEnv.astro';
 ---
+
+<ToastEnv />
 
 <div class="contact-block">
     <div class="text-center">
@@ -21,12 +24,44 @@ import BtnGhost from "@components/BtnGhost.astro";
                 <textarea name="mensagem" rows="5" class="form-control" required=""></textarea>
             </label>
         </section>
-
-        <!-- <input type="hidden" name="action" value="ok"> -->
         
         <div class="text-center">
-            <BtnGhost type="submit" name="action" value="ok" title="Enviar mensagem"/>
+            <button 
+                type="submit" 
+                name="action" 
+                value="ok" 
+                class="btn btn-ghost-primary"
+                data-btn="spinner"
+                data-toast-target="env"
+            >
+                <span>Enviar mensagem</span>       
+                <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>  
+            </button>
         </div>
     </form>
 </div>
 
+<style>
+    .btn-spinner-disabled{
+        opacity: 0.8!important;
+        pointer-events: none!important; 
+    }
+</style>
+
+<script is:inline>
+    const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]')
+
+    for(const btn of spinnerBtns){
+        btn.addEventListener('click', (event) => {
+            event.preventDefault()
+            
+            btn.classList.add('btn-spinner-disabled')
+            btn.querySelector('.btn-spinner').classList.remove('d-none')
+            
+            setTimeout(() => {
+                btn.classList.remove('btn-spinner-disabled')
+                btn.querySelector('.btn-spinner').classList.add('d-none')
+            }, 3000)
+        })
+    }
+</script>
