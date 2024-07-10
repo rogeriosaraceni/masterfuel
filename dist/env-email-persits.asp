@@ -23,14 +23,14 @@
 
     	'Corpo da mensagem 
 
-    	texto = "<html><body>"
+    	texto = "<font family: arial>"
     	texto = texto & "<b>Nome:</b> "&request("nome")&""
     	texto = texto & "<br>"
     	texto = texto & "<b>E-mail:</b> "&request("email")&""
     	texto = texto & "<br>"
     	texto = texto & "<br>"
     	texto = texto & "<b>Mensagem:</b> "&request("mensagem")&""
-    	texto = texto & "</body></html>"
+    	texto = texto & "</font>"
 
     	mail.body = texto
 		Mail.Charset = "utf-8"
