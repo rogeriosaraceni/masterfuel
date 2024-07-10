@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Preloader from '@components/Preloader.astro';
 import SectionHome from './section-home/_home.astro';
 import SectionProdutos from './section-produtos/_produtos.astro';
 import SectionSuporte from './section-suporte/_suporte.astro';
@@ -7,6 +8,7 @@ import SectionContato from './section-contato/_contato.astro';
 ---
 
 <Layout>
+	<Preloader />
 	<main class="main-content">
 		<SectionHome />
 		<SectionProdutos />

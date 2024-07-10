@@ -3,17 +3,22 @@ interface Props {
 	type: "submit" | "reset" | "button",
     dataBsToggle?: string,
     dataBsTarget?: string,
-    name: string,
+    name?: string,
+    value?: string,
+    title: string,
 }
 
-const { type, dataBsToggle, dataBsTarget, name } = Astro.props
+const { type, dataBsToggle, dataBsTarget, name, value, title } = Astro.props
 ---
 
 <button 
     type{type} 
     class="btn btn-ghost-primary"
     data-bs-toggle={dataBsToggle} 
-    data-bs-target={dataBsTarget} 
+    data-bs-target={dataBsTarget}
+    name={name}
+    value={value}
+    title={title}
 >
-    {name}
+    {title}
 </button>
