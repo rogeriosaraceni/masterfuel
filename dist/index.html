@@ -217,6 +217,25 @@ São Paulo / SP • CEP.: 03340-000
             localStorage.removeItem('formError');
         }
     })
+</script> <div class="toast-container toast-app" data-astro-cid-hd3ejynh> <div data-toast-type="error" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-astro-cid-hd3ejynh> <div class="bg-danger" data-astro-cid-hd3ejynh> <div class="text-white" data-astro-cid-hd3ejynh> <div class="d-flex" data-astro-cid-hd3ejynh> <div class="toast-body d-flex align-items-center gap-2" data-astro-cid-hd3ejynh> <div class="fs-4" data-astro-cid-hd3ejynh> <i class="bi bi-x-circle" data-astro-cid-hd3ejynh></i> </div> <strong data-astro-cid-hd3ejynh>Erro!</strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" data-astro-cid-hd3ejynh></button> </div> </div> </div> </div> </div>  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toastType = localStorage.getItem('formSubmitted')
+
+        if (toastType) {
+            // Seleciona e exibe o toast correto com base no tipo armazenado
+            const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
+
+            console.log(toastElement);
+
+            if (toastElement) {
+                const toast = new bootstrap.Toast(toastElement)
+                toast.show()
+            }
+            // Remove a flag do localStorage
+            localStorage.removeItem('formSubmitted')
+            localStorage.removeItem('formError');
+        }
+    })
 </script> <div class="contact-block"> <div class="text-center"> <h2 class="section-title">Se preferir preencha nosso formulário</h2> </div> <form method="post" action="./env-email.asp"> <section class="row mb-4"> <label class="col-md-6">Nome:
 <input type="text" name="nome" class="form-control" required> </label> <label class="col-md-6">E-mail
 <input type="email" name="email" class="form-control" required> </label> <label class="col-md-12">O que podemos ajudá-lo?
@@ -246,6 +265,8 @@ São Paulo / SP • CEP.: 03340-000
                         form.appendChild(toastTargetInput);
 
                         console.log(toastTargetInput);
+
+                        //debugger
 
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');

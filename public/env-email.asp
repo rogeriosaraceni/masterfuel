@@ -4,7 +4,7 @@
     'COMPONENTE DE ENVIO DE EMAIL
     if request("nome") <> "" and request("email") <> "" and request("mensagem") <> "" then
 		' Variaveis
-		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail
+		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail, toastTarget
 
 		emailFromAddAddress = "dev@masterfuel.com.br"
 
@@ -12,6 +12,7 @@
 		nome = request("nome")
 		email = request("email")
 		mensagem = request("mensagem")
+		toastTarget = request("toastTarget")
 		
 		' Configurando o objeto de e-mail
     	Set Mail = Server.CreateObject("Persits.MailSender")
