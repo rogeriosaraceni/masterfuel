@@ -40,19 +40,8 @@ const { btnClass, dataToastTarget, title } = Astro.props
                     
                     setTimeout(() => {
                         const toastTarget = btn.getAttribute('data-toast-target');
-                        // Define uma flag no localStorage com o valor de data-toast-target
-                        //localStorage.setItem('formSubmitted', toastTarget);
-
-                        // Adiciona um campo oculto ao formulário com o valor do toastTarget
-                        const toastTargetInput = document.createElement('input');
-                        toastTargetInput.type = 'hidden';
-                        toastTargetInput.name = 'toastTarget';
-                        toastTargetInput.value = toastTarget;
-                        form.appendChild(toastTargetInput);
-
-                        console.log(toastTargetInput);
-
-                        //debugger
+                        //Define uma flag no localStorage com o valor de data-toast-target
+                        localStorage.setItem('formSubmitted', toastTarget);
 
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');

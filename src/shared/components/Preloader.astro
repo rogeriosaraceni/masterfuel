@@ -115,9 +115,7 @@
 </div>
 
 <script is:inline>
-   addEventListener('load', function () {
-        setTimeout(function () {
-            document.getElementById('preloader-page')?.classList.add('preloader-hide');
-        }, 5)
+    window.addEventListener('load', function () {
+        document.getElementById('preloader-page')?.classList.add('preloader-hide'); 
     })
 </script>

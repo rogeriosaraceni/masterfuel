@@ -64,15 +64,12 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorCla
             // Seleciona e exibe o toast correto com base no tipo armazenado
             const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
 
-            console.log(toastElement);
-
             if (toastElement) {
                 const toast = new bootstrap.Toast(toastElement)
                 toast.show()
             }
             // Remove a flag do localStorage
             localStorage.removeItem('formSubmitted')
-            localStorage.removeItem('formError');
         }
     })
 </script>

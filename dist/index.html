@@ -20,10 +20,8 @@
         navMoibile.classList.remove('show')
     })
 </script>  <div class="preloader" id="preloader-page" data-astro-cid-vepo5zq3> <div class="content-preloader" data-astro-cid-vepo5zq3> <svg class="loader-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" data-astro-cid-vepo5zq3> <circle cx="170" cy="170" r="140" stroke="#5ba34c" data-astro-cid-vepo5zq3></circle> <circle cx="170" cy="170" r="115" stroke="#47843b" data-astro-cid-vepo5zq3></circle> <circle cx="170" cy="170" r="90" stroke="#33602a" data-astro-cid-vepo5zq3></circle> </svg> <div class="text" data-astro-cid-vepo5zq3> <span data-astro-cid-vepo5zq3> <h2 data-astro-cid-vepo5zq3> <i class="text-success" data-astro-cid-vepo5zq3>MASTER</i><i class="text-white" data-astro-cid-vepo5zq3>FUEL</i> </h2> </span> </div> </div> </div> <script>
-   addEventListener('load', function () {
-        setTimeout(function () {
-            document.getElementById('preloader-page')?.classList.add('preloader-hide');
-        }, 5)
+    window.addEventListener('load', function () {
+        document.getElementById('preloader-page')?.classList.add('preloader-hide'); 
     })
 </script> <main class="main-content"> <section id="home" class="section home-section"> <div class="home-carousel-holder"> <div id="home-carousel" class="home-carousel carousel slide carousel-fade" data-bs-ride="carousel"> <div class="carousel-inner carousel-zoom"> <div class="carousel-item slide-img-cover active" style="background-image: url(./assets/images/bg.jpg);"> <div class="d-flex align-items-center justify-content-center min-vh-100"></div> </div> </div> <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> </div> </div> <div class="overlay-mask"></div> <div class="container text-center home-content"> <h1 aria-label="logo" class="logo-home" style="background-image: url(./assets/images/logo.png);"></h1> <div class="tagline">sua nova injeção e ignição eletrônica programável!</div> </div> </section> <section id="produtos" class="section section-grey  text-center"> <h2 class="section-title text-center">Produtos</h2> <article class="splide splide-default mb-4" id="splide-produtos-index"> <div class="splide__track"> <ul class="splide__list"> <li class="splide__slide item-box-mask"> <h4 class="mb-0">PSA10</h4> <p class="mb-1">Sensor Pressão 10 bar</p> <div class="item-inner shadow text-center bg-white"> <div role="button" data-bs-toggle="modal" data-bs-target="#modal-PSA10"> <img class="img-fluid" src="./assets/images/produtos/PSA10/cover.jpg" alt="PSA10"> <div class="mask pe-none"> <div class="mask-inner"> <p class="content-title">PSA10</p> <p class="content-desc">Sensor Pressão 10 bar</p> <div class="d-flex gap-2"> <button type="button" class="btn btn-primary btn-cta pe-auto">Saiba +</button>  </div> </div> </div> </div> </div> </li><li class="splide__slide item-box-mask"> <h4 class="mb-0">TBI</h4> <p class="mb-1">TBI com borboleta de 32 mm</p> <div class="item-inner shadow text-center bg-white"> <div role="button" data-bs-toggle="modal" data-bs-target="#modal-TBI"> <img class="img-fluid" src="./assets/images/produtos/TBI/cover.jpg" alt="TBI"> <div class="mask pe-none"> <div class="mask-inner"> <p class="content-title">TBI</p> <p class="content-desc">TBI com borboleta de 32 mm</p> <div class="d-flex gap-2"> <button type="button" class="btn btn-primary btn-cta pe-auto">Saiba +</button>  </div> </div> </div> </div> </div> </li> </ul> </div> </article> <script>
 	addEventListener('load', () => {
@@ -206,15 +204,12 @@ São Paulo / SP • CEP.: 03340-000
             // Seleciona e exibe o toast correto com base no tipo armazenado
             const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
 
-            console.log(toastElement);
-
             if (toastElement) {
                 const toast = new bootstrap.Toast(toastElement)
                 toast.show()
             }
             // Remove a flag do localStorage
             localStorage.removeItem('formSubmitted')
-            localStorage.removeItem('formError');
         }
     })
 </script> <div class="toast-container toast-app" data-astro-cid-hd3ejynh> <div data-toast-type="error" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-astro-cid-hd3ejynh> <div class="bg-danger" data-astro-cid-hd3ejynh> <div class="text-white" data-astro-cid-hd3ejynh> <div class="d-flex" data-astro-cid-hd3ejynh> <div class="toast-body d-flex align-items-center gap-2" data-astro-cid-hd3ejynh> <div class="fs-4" data-astro-cid-hd3ejynh> <i class="bi bi-x-circle" data-astro-cid-hd3ejynh></i> </div> <strong data-astro-cid-hd3ejynh>Erro!</strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" data-astro-cid-hd3ejynh></button> </div> </div> </div> </div> </div>  <script>
@@ -225,15 +220,12 @@ São Paulo / SP • CEP.: 03340-000
             // Seleciona e exibe o toast correto com base no tipo armazenado
             const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
 
-            console.log(toastElement);
-
             if (toastElement) {
                 const toast = new bootstrap.Toast(toastElement)
                 toast.show()
             }
             // Remove a flag do localStorage
             localStorage.removeItem('formSubmitted')
-            localStorage.removeItem('formError');
         }
     })
 </script> <div class="contact-block"> <div class="text-center"> <h2 class="section-title">Se preferir preencha nosso formulário</h2> </div> <form method="post" action="./env-email.asp"> <section class="row mb-4"> <label class="col-md-6">Nome:
@@ -254,19 +246,8 @@ São Paulo / SP • CEP.: 03340-000
                     
                     setTimeout(() => {
                         const toastTarget = btn.getAttribute('data-toast-target');
-                        // Define uma flag no localStorage com o valor de data-toast-target
-                        //localStorage.setItem('formSubmitted', toastTarget);
-
-                        // Adiciona um campo oculto ao formulário com o valor do toastTarget
-                        const toastTargetInput = document.createElement('input');
-                        toastTargetInput.type = 'hidden';
-                        toastTargetInput.name = 'toastTarget';
-                        toastTargetInput.value = toastTarget;
-                        form.appendChild(toastTargetInput);
-
-                        console.log(toastTargetInput);
-
-                        //debugger
+                        //Define uma flag no localStorage com o valor de data-toast-target
+                        localStorage.setItem('formSubmitted', toastTarget);
 
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');

@@ -2,9 +2,9 @@
 
 <%
     'COMPONENTE DE ENVIO DE EMAIL
-    if request("nome") <> "" and request("email") <> "" and request("mensagem") <> "" then
+    if request("nome2") <> "" and request("email") <> "" and request("mensagem") <> "" then
 		' Variaveis
-		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail, toastTarget
+		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail
 
 		emailFromAddAddress = "dev@masterfuel.com.br"
 
@@ -12,7 +12,6 @@
 		nome = request("nome")
 		email = request("email")
 		mensagem = request("mensagem")
-		toastTarget = request("toastTarget")
 		
 		' Configurando o objeto de e-mail
     	Set Mail = Server.CreateObject("Persits.MailSender")
@@ -38,10 +37,8 @@
     	On Error Resume Next 
 		Mail.Send 
 		If Err <> 0 Then 
-			Response.Write "<script>localStorage.setItem('formError', 'error');</script>"
 			Response.Write "Error encountered: " & Err.Description 
 		Else
-		    Response.Write "<script>localStorage.setItem('formSubmitted', '" & toastTarget & "');</script>"
 			Response.Redirect "index.html"
 		End If 
 		Set Mail = Nothing
