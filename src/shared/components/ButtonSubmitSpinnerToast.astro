@@ -32,26 +32,10 @@ const { btnClass, dataToastTarget, title } = Astro.props
         const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
 
         for(const btn of spinnerBtns) {
-            btn.addEventListener('click', (event) => {      
-
-                const nomeInput = document.querySelector('input[name="nome"]');
-                const emailInput = document.querySelector('input[name="email"]');
-                const mensagemInput = document.querySelector('textarea[name="mensagem"]');
-
-                // Expressão regular para validar formato de e-mail
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!nomeInput.value || !emailInput.value || !mensagemInput.value) {
-                    event.preventDefault(); // Impede o envio do formulário se os campos estiverem vazios
-                    alert('Por favor, preencha todos os campos obrigatórios.');
-                } 
+            btn.addEventListener('click', (event) => {
+                const form = btn.closest('form');
                 
-                else if (!emailRegex.test(emailInput.value)) {
-                    event.preventDefault(); // Impede o envio do formulário se o formato do e-mail for inválido
-                    alert('Por favor, insira um e-mail válido.');
-                } 
-
-                else {
+                if (form.checkValidity()) {
                     event.preventDefault();
                     btn.classList.add('btn-spinner-disabled');
                     btn.querySelector('.btn-spinner').classList.remove('d-none');
@@ -63,10 +47,11 @@ const { btnClass, dataToastTarget, title } = Astro.props
 
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');
-                        btn.closest('form').submit();
+                        form.submit();
                     }, 1000);
-                }                    
+                }
             });
         }
-    })
+    });
 </script>
+
