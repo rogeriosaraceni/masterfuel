@@ -206,12 +206,15 @@ São Paulo / SP • CEP.: 03340-000
             // Seleciona e exibe o toast correto com base no tipo armazenado
             const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
 
+            console.log(toastElement);
+
             if (toastElement) {
                 const toast = new bootstrap.Toast(toastElement)
                 toast.show()
             }
             // Remove a flag do localStorage
             localStorage.removeItem('formSubmitted')
+            localStorage.removeItem('formError');
         }
     })
 </script> <div class="contact-block"> <div class="text-center"> <h2 class="section-title">Se preferir preencha nosso formulário</h2> </div> <form method="post" action="./env-email.asp"> <section class="row mb-4"> <label class="col-md-6">Nome:
@@ -233,7 +236,16 @@ São Paulo / SP • CEP.: 03340-000
                     setTimeout(() => {
                         const toastTarget = btn.getAttribute('data-toast-target');
                         // Define uma flag no localStorage com o valor de data-toast-target
-                        localStorage.setItem('formSubmitted', toastTarget);
+                        //localStorage.setItem('formSubmitted', toastTarget);
+
+                        // Adiciona um campo oculto ao formulário com o valor do toastTarget
+                        const toastTargetInput = document.createElement('input');
+                        toastTargetInput.type = 'hidden';
+                        toastTargetInput.name = 'toastTarget';
+                        toastTargetInput.value = toastTarget;
+                        form.appendChild(toastTargetInput);
+
+                        console.log(toastTargetInput);
 
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');

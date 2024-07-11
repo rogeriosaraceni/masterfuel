@@ -37,8 +37,10 @@
     	On Error Resume Next 
 		Mail.Send 
 		If Err <> 0 Then 
+			Response.Write "<script>localStorage.setItem('formError', 'error');</script>"
 			Response.Write "Error encountered: " & Err.Description 
 		Else
+		    Response.Write "<script>localStorage.setItem('formSubmitted', '" & toastTarget & "');</script>"
 			Response.Redirect "index.html"
 		End If 
 		Set Mail = Nothing
