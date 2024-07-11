@@ -2,7 +2,7 @@
 
 <%
     'COMPONENTE DE ENVIO DE EMAIL
-    if request("nome2") <> "" and request("email") <> "" and request("mensagem") <> "" then
+    if request("nome") <> "" and request("email") <> "" and request("mensagem") <> "" then
 		' Variaveis
 		Dim emailFromAddAddress, nome, email, mensagem, corpoEmail
 
@@ -37,10 +37,14 @@
     	On Error Resume Next 
 		Mail.Send 
 		If Err <> 0 Then 
-			Response.Write "Error encountered: " & Err.Description 
+			errorMsg = "Erro ao enviar e-mail: " & Err.Description
 		Else
 			Response.Redirect "index.html"
 		End If 
 		Set Mail = Nothing
     end if
 %>
+
+<% If errorMsg <> "" Then %>
+    <p style="color: red;"><%=errorMsg%></p>
+<% End If %>
