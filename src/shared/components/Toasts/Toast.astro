@@ -4,7 +4,7 @@ interface Props {
     bgColorClass: string,
     textColorClass: string,
     icon: string,
-    msg: string,
+    msg?: string,
     msgError?: string,
     btnCloseColorClass?: string
 }
@@ -28,7 +28,7 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnClo
                             <i class={icon}></i>
                         </div>
                         <strong>
-                            <span>{msg}</span>
+                            <span {...(msgError ? {'data-server-message': 'error'} : {})}>{msg}</span>
                         </strong>
                     </div>
 
