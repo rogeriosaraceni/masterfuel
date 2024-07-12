@@ -16,7 +16,7 @@
             'Configurando o objeto de e-mail
             Set Mail = Server.CreateObject("Persits.MailSender")
 
-            Mail.Host = "localhost_XXX"
+            Mail.Host = "localhost"
             Mail.From = request("email")
             Mail.MailFrom = emailFromAddAddress
             Mail.FromName = request("nome")
