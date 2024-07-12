@@ -196,59 +196,60 @@ Av. Vereador Abel Ferreira, 2730
 Bairro Chácara Mafalda
 <br>
 São Paulo / SP • CEP.: 03340-000
-</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-envelope h4 mb-2"></i> <h6 class="text-dark mb-0">E-mail</h6> <p class="mb-0">masterfuel@masterfuel.com.br</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-phone h4 mb-2"></i> <h6 class="text-dark mb-0">Telefone</h6> <p class="mb-0">(11) 9788-72083</p> </div> </article> </div> <hr> <div class="d-flex justify-content-center flex-wrap"> <a class="text-success text-center py-3 px-5" href="https://www.instagram.com/Masterfuel.br/" target="_blank"> <i class="bi bi-instagram h4 mb-2"></i> <h6 class="text-dark mb-0">Instagram</h6> <p class="mb-0">Masterfuel.br</p> </a> <a class="text-success text-center py-3 px-5" href="https://www.facebook.com/profile.php?id=100088179866696" target="_blank"> <i class="bi bi-facebook h4 mb-2"></i> <h6 class="text-dark mb-0">Facebook</h6> <p class="mb-0">Master Fuel</p> </a> <a class="text-success text-center py-3 px-5" href="https://masterfuel.myshopify.com/" target="_blank"> <i class="bi bi-bag-check h4 mb-2"></i> <h6 class="text-dark mb-0">Loja Online</h6> <p class="mb-0">Master Fuel</p> </a> </div> </div> </div> </div> <div class="toast-container toast-app" data-astro-cid-hd3ejynh> <div data-toast-type="env" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-astro-cid-hd3ejynh> <div class="bg-success" data-astro-cid-hd3ejynh> <div class="text-white" data-astro-cid-hd3ejynh> <div class="d-flex" data-astro-cid-hd3ejynh> <div class="toast-body d-flex align-items-center gap-2" data-astro-cid-hd3ejynh> <div class="fs-4" data-astro-cid-hd3ejynh> <i class="bi bi-check2-circle" data-astro-cid-hd3ejynh></i> </div> <strong data-astro-cid-hd3ejynh>Enviado(s) com sucesso!</strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" data-astro-cid-hd3ejynh></button> </div> </div> </div> </div> </div>  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toastType = localStorage.getItem('formSubmitted')
-
-        if (toastType) {
-            // Seleciona e exibe o toast correto com base no tipo armazenado
-            const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
-
-            if (toastElement) {
-                const toast = new bootstrap.Toast(toastElement)
-                toast.show()
-            }
-            // Remove a flag do localStorage
-            localStorage.removeItem('formSubmitted')
+</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-envelope h4 mb-2"></i> <h6 class="text-dark mb-0">E-mail</h6> <p class="mb-0">masterfuel@masterfuel.com.br</p> </div> </article> <article class="col-lg-4 col-md-4 ml-lg-auto"> <div class="text-center p-3"> <i class="bi bi-phone h4 mb-2"></i> <h6 class="text-dark mb-0">Telefone</h6> <p class="mb-0">(11) 9788-72083</p> </div> </article> </div> <hr> <div class="d-flex justify-content-center flex-wrap"> <a class="text-success text-center py-3 px-5" href="https://www.instagram.com/Masterfuel.br/" target="_blank"> <i class="bi bi-instagram h4 mb-2"></i> <h6 class="text-dark mb-0">Instagram</h6> <p class="mb-0">Masterfuel.br</p> </a> <a class="text-success text-center py-3 px-5" href="https://www.facebook.com/profile.php?id=100088179866696" target="_blank"> <i class="bi bi-facebook h4 mb-2"></i> <h6 class="text-dark mb-0">Facebook</h6> <p class="mb-0">Master Fuel</p> </a> <a class="text-success text-center py-3 px-5" href="https://masterfuel.myshopify.com/" target="_blank"> <i class="bi bi-bag-check h4 mb-2"></i> <h6 class="text-dark mb-0">Loja Online</h6> <p class="mb-0">Master Fuel</p> </a> </div> </div> </div> </div> <div class="toast-container toast-app" data-astro-cid-hd3ejynh> <div data-toast-type="env" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-astro-cid-hd3ejynh> <div class="bg-success" data-astro-cid-hd3ejynh> <div class="text-white" data-astro-cid-hd3ejynh> <div class="d-flex" data-astro-cid-hd3ejynh> <div class="toast-body d-flex align-items-center gap-2" data-astro-cid-hd3ejynh> <div class="fs-4" data-astro-cid-hd3ejynh> <i class="bi bi-check2-circle" data-astro-cid-hd3ejynh></i> </div> <strong data-astro-cid-hd3ejynh> <span data-astro-cid-hd3ejynh>Enviado(s) com sucesso!</span> </strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" data-astro-cid-hd3ejynh></button> </div> </div> </div> </div> </div>  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toastStatus = localStorage.getItem('toastStatus');
+        
+        if (toastStatus) {
+            const toastElements = document.querySelectorAll(`[data-toast-type="${toastStatus}"]`);
+            toastElements.forEach(toastElement => {
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            });
+            localStorage.removeItem('toastStatus');
         }
-    })
-</script> <div class="toast-container toast-app" data-astro-cid-hd3ejynh> <div data-toast-type="error" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-astro-cid-hd3ejynh> <div class="bg-danger" data-astro-cid-hd3ejynh> <div class="text-white" data-astro-cid-hd3ejynh> <div class="d-flex" data-astro-cid-hd3ejynh> <div class="toast-body d-flex align-items-center gap-2" data-astro-cid-hd3ejynh> <div class="fs-4" data-astro-cid-hd3ejynh> <i class="bi bi-x-circle" data-astro-cid-hd3ejynh></i> </div> <strong data-astro-cid-hd3ejynh>Erro!</strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" data-astro-cid-hd3ejynh></button> </div> </div> </div> </div> </div>  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toastType = localStorage.getItem('formSubmitted')
-
-        if (toastType) {
-            // Seleciona e exibe o toast correto com base no tipo armazenado
-            const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
-
-            if (toastElement) {
-                const toast = new bootstrap.Toast(toastElement)
-                toast.show()
-            }
-            // Remove a flag do localStorage
-            localStorage.removeItem('formSubmitted')
+    });
+</script> <div data-toast-type="error" class="toast" role="alert" aria-live="assertive" aria-atomic="true"> <div class="bg-danger"> <div class="text-white"> <div class="d-flex"> <div class="toast-body d-flex align-items-center gap-2"> <div class="fs-4"> <i class="bi bi-check2-circle"></i> </div> <strong> <span data-server-message="error">Error Server !</span> </strong> </div> <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button> </div> </div> </div> </div> <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verifica se há um erro no localStorage
+        const toastError = localStorage.getItem('toastError');
+        
+        if (toastError) {
+            const textServerError = document.querySelector('[data-server-message="error"]')
+            textServerError.innerText = toastError
+            // Limpa o erro do localStorage após exibir no console
+            localStorage.removeItem('toastError');
         }
-    })
+    });
 </script> <div class="contact-block"> <div class="text-center"> <h2 class="section-title">Se preferir preencha nosso formulário</h2> </div> <form method="post" action="./env-email.asp"> <section class="row mb-4"> <label class="col-md-6">Nome:
 <input type="text" name="nome" class="form-control" required> </label> <label class="col-md-6">E-mail
 <input type="email" name="email" class="form-control" required> </label> <label class="col-md-12">O que podemos ajudá-lo?
 <textarea name="mensagem" rows="5" class="form-control" required></textarea> </label> </section> <div class="text-center"> <button type="submit" class="btn btn-ghost-primary" data-btn="spinner" data-toast-target="env" data-astro-cid-3h7vyvgu> <span data-astro-cid-3h7vyvgu>Enviar mensagem</span> <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" data-astro-cid-3h7vyvgu></span> </button>  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
 
         for(const btn of spinnerBtns) {
-            btn.addEventListener('click', (event) => {
+            btn.addEventListener('click', (event) => {                    
                 const form = btn.closest('form');
                 
                 if (form.checkValidity()) {
                     event.preventDefault();
                     btn.classList.add('btn-spinner-disabled');
                     btn.querySelector('.btn-spinner').classList.remove('d-none');
-                    
-                    setTimeout(() => {
-                        const toastTarget = btn.getAttribute('data-toast-target');
-                        //Define uma flag no localStorage com o valor de data-toast-target
-                        localStorage.setItem('formSubmitted', toastTarget);
 
+                    // Pegar o valor do toastTarget
+                    const toastTarget = btn.getAttribute('data-toast-target');
+
+                    if (toastTarget) {
+                        // Adicionar um campo oculto ao formulário com o valor do toastTarget
+                        const toastTargetInput = document.createElement('input');
+                        toastTargetInput.type = 'hidden';
+                        toastTargetInput.name = 'toastTarget';
+                        toastTargetInput.value = toastTarget;
+                        form.appendChild(toastTargetInput);
+                    }
+
+                    setTimeout(() => {
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');
                         form.submit();

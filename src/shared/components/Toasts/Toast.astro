@@ -5,10 +5,11 @@ interface Props {
     textColorClass: string,
     icon: string,
     msg: string,
+    msgError?: string,
     btnCloseColorClass?: string
 }
 
-const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorClass} = Astro.props
+const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnCloseColorClass} = Astro.props
 ---
 
 <div class="toast-container toast-app">
@@ -26,7 +27,9 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorCla
                         <div class="fs-4">
                             <i class={icon}></i>
                         </div>
-                        <strong>{msg}</strong>
+                        <strong>
+                            <span>{msg}</span>
+                        </strong>
                     </div>
 
                     <button 
@@ -57,19 +60,16 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, btnCloseColorCla
 </style>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toastType = localStorage.getItem('formSubmitted')
-
-        if (toastType) {
-            // Seleciona e exibe o toast correto com base no tipo armazenado
-            const toastElement = document.querySelector(`[data-toast-type="${toastType}"]`)
-
-            if (toastElement) {
-                const toast = new bootstrap.Toast(toastElement)
-                toast.show()
-            }
-            // Remove a flag do localStorage
-            localStorage.removeItem('formSubmitted')
+    document.addEventListener('DOMContentLoaded', function () {
+        const toastStatus = localStorage.getItem('toastStatus');
+        
+        if (toastStatus) {
+            const toastElements = document.querySelectorAll(`[data-toast-type="${toastStatus}"]`);
+            toastElements.forEach(toastElement => {
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            });
+            localStorage.removeItem('toastStatus');
         }
-    })
+    });
 </script>

@@ -1,0 +1,16 @@
+.btn-spinner-disabled{
+    opacity: 0.8!important;
+    pointer-events: none!important; 
+}
+
+.toast-container.toast-app{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+.toast-container.toast-app .toast{
+    align-items: center;
+    border: 0;
+    --bs-toast-max-width: 650px;
+}

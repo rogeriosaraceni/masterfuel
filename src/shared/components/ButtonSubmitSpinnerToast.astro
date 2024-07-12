@@ -26,23 +26,31 @@ const { btnClass, dataToastTarget, title } = Astro.props
 </style>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
 
         for(const btn of spinnerBtns) {
-            btn.addEventListener('click', (event) => {
+            btn.addEventListener('click', (event) => {                    
                 const form = btn.closest('form');
                 
                 if (form.checkValidity()) {
                     event.preventDefault();
                     btn.classList.add('btn-spinner-disabled');
                     btn.querySelector('.btn-spinner').classList.remove('d-none');
-                    
-                    setTimeout(() => {
-                        const toastTarget = btn.getAttribute('data-toast-target');
-                        //Define uma flag no localStorage com o valor de data-toast-target
-                        localStorage.setItem('formSubmitted', toastTarget);
 
+                    // Pegar o valor do toastTarget
+                    const toastTarget = btn.getAttribute('data-toast-target');
+
+                    if (toastTarget) {
+                        // Adicionar um campo oculto ao formulário com o valor do toastTarget
+                        const toastTargetInput = document.createElement('input');
+                        toastTargetInput.type = 'hidden';
+                        toastTargetInput.name = 'toastTarget';
+                        toastTargetInput.value = toastTarget;
+                        form.appendChild(toastTargetInput);
+                    }
+
+                    setTimeout(() => {
                         btn.classList.remove('btn-spinner-disabled');
                         btn.querySelector('.btn-spinner').classList.add('d-none');
                         form.submit();
