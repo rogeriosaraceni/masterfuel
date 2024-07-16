@@ -14,20 +14,16 @@ jobs:
     - name: Checkout latest code
       uses: actions/checkout@v4
 
-    - name: Check if commit message contains [build]
-      id: check_commit_message
-      run: |
-        echo "Commit message: ${{ github.event.head_commit.message }}"
-        if [[ "${{ github.event.head_commit.message }}" == *"[build]"* ]]; then
-          echo "contains_build=true" >> $GITHUB_ENV
-        else
-          echo "Commit message does not contain [build]. Skipping deployment."
-          echo "contains_build=false" >> $GITHUB_ENV
-          exit 0
-        fi
+    - name: Check if dist folder was updated
+      id: filter
+      uses: dorny/paths-filter@v2
+      with:
+        filters: |
+          dist:
+            - 'dist/**'
 
     - name: FTP Deploy Locaweb
-      if: env.contains_build == 'true'
+      if: steps.filter.outputs.dist == 'true'
       uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }} 
