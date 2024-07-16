@@ -11,23 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout latest code
+    - name: Get latest code 
       uses: actions/checkout@v4
 
-    - name: Check if dist folder was updated
-      id: filter
-      uses: dorny/paths-filter@v2
-      with:
-        filters: |
-          dist:
-            - 'dist/**'
-
-    - name: Debug paths filter output
-      run: |
-        echo "Changes in dist: ${{ steps.filter.outputs.dist }}"
-
     - name: FTP Deploy Locaweb
-      if: ${{ steps.filter.outputs.dist == 'true' }}
       uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }} 
