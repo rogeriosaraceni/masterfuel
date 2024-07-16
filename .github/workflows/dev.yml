@@ -1,4 +1,4 @@
-name: Deploy via ftp
+name: Deploy via FTP
 
 on: 
   push:
@@ -11,20 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get latest code 
+    - name: Checkout latest code
       uses: actions/checkout@v4
 
     - name: Check if commit message contains [build]
       id: check_commit_message
       run: |
         echo "Commit message: ${{ github.event.head_commit.message }}"
-        if [[ "${{ github.event.head_commit.message }}" != *"[build]"* ]]; then
+        if [[ "${{ github.event.head_commit.message }}" == *"[build]"* ]]; then
+          echo "::set-output name=contains_build::true"
+        else
           echo "Commit message does not contain [build]. Skipping deployment."
+          echo "::set-output name=contains_build::false"
           exit 0
         fi
 
     - name: FTP Deploy Locaweb
-      if: success() && steps.check_commit_message.outputs.contains_build == 'true'
+      if: steps.check_commit_message.outputs.contains_build == 'true'
       uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }} 
