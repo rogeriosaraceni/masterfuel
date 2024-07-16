@@ -19,15 +19,15 @@ jobs:
       run: |
         echo "Commit message: ${{ github.event.head_commit.message }}"
         if [[ "${{ github.event.head_commit.message }}" == *"[build]"* ]]; then
-          echo "::set-output name=contains_build::true"
+          echo "contains_build=true" >> $GITHUB_ENV
         else
           echo "Commit message does not contain [build]. Skipping deployment."
-          echo "::set-output name=contains_build::false"
+          echo "contains_build=false" >> $GITHUB_ENV
           exit 0
         fi
 
     - name: FTP Deploy Locaweb
-      if: steps.check_commit_message.outputs.contains_build == 'true'
+      if: env.contains_build == 'true'
       uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }} 
