@@ -14,17 +14,7 @@ jobs:
     - name: Get latest code 
       uses: actions/checkout@v4
 
-    - name: Check if commit message contains [build]
-      id: check_commit_message
-      run: |
-        echo "Commit message: ${{ github.event.head_commit.message }}"
-        if [[ "${{ github.event.head_commit.message }}" != *"[build]"* ]]; then
-          echo "Commit message does not contain [build]. Skipping deployment."
-          exit 0
-        fi
-
     - name: FTP Deploy Locaweb
-      if: success() && steps.check_commit_message.outputs.contains_build == 'true'
       uses: locaweb/ftp-deploy@1.0.0
       with:
         host: ${{ secrets.HOST }} 
