@@ -48,5 +48,5 @@ if (!empty($errorMessage)) {
 }
 
 // Armazenar o toastStatus no localStorage via JavaScript
-echo "<script>localStorage.setItem('toastStatus', '" . $toastStatus . "'); window.location.href = './index.html';</script>";
+echo "<script>localStorage.setItem('toastStatus', '" . $toastStatus . "'); window.location.href = 'index.html';</script>";
 ?>
