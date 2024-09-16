@@ -2,7 +2,6 @@
 
 ```
 # Ignorar pastas geradas
-node_modules/
 build/
 dist/
 public/
