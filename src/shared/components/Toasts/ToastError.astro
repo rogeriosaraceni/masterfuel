@@ -1,23 +1,26 @@
 ---
 import Toast from './Toast.astro';
 ---
-<Toast 
-    dataToastType="error" 
-    bgColorClass="bg-danger" 
-    textColorClass="text-white" 
-    icon="bi bi-x-circle" 
-    msgError="Error Server !" 
+
+<Toast
+    dataToastType="error"
+    bgColorClass="bg-danger"
+    textColorClass="text-white"
+    icon="bi bi-x-circle"
+    msgError="Error Server !"
     btnCloseColorClass="btn-close-white"
 />
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Verifica se há um erro no localStorage
         const toastError = localStorage.getItem('toastError');
-        
+
         if (toastError) {
-            const textServerError = document.querySelector('[data-server-message="error"]')
-            textServerError.innerText = toastError
+            const textServerError = document.querySelector(
+                '[data-server-message="error"]'
+            );
+            textServerError.innerText = toastError;
             // Limpa o erro do localStorage após exibir no console
             localStorage.removeItem('toastError');
         }

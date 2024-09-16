@@ -1,0 +1,37 @@
+# Instalar Eslint
+
+-   npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-prettier eslint-plugin-astro
+
+#
+
+Arquivo .eslintrc.json
+
+```
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:astro/recommended",
+        "prettier"
+    ],
+    "plugins": ["@typescript-eslint", "astro"],
+    "rules": {
+        // Adicione suas regras personalizadas aqui
+    },
+    "overrides": [
+        {
+            "files": ["*.astro"],
+            "parserOptions": {
+                "parser": "@astrojs/eslint-parser"
+            }
+        }
+    ]
+}
+
+```

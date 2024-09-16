@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <style>
@@ -9,10 +10,10 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: #444
+        background: #444;
     }
     .preloader::before {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         z-index: -1;
@@ -26,21 +27,20 @@
     .preloader-hide {
         visibility: hidden;
         transform: translateX(-100%);
-        transition: all .3s 2s ease-out
+        transition: all 0.3s 2s ease-out;
     }
 
-    .content-preloader{
+    .content-preloader {
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: center;
         align-items: center;
     }
-    .content-preloader .text{
+    .content-preloader .text {
         color: #111;
         font-size: 1rem;
     }
-
 
     .loader-circle {
         max-width: 10rem;
@@ -98,16 +98,22 @@
 
 <div class="preloader" id="preloader-page">
     <div class="content-preloader">
-        <svg class="loader-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340">
-            <circle cx="170" cy="170" r="140" stroke="#5ba34c"/>
-            <circle cx="170" cy="170" r="115" stroke="#47843b"/>
-            <circle cx="170" cy="170" r="90" stroke="#33602a"/>
+        <svg
+            class="loader-circle"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 340 340"
+        >
+            <circle cx="170" cy="170" r="140" stroke="#5ba34c"></circle>
+            <circle cx="170" cy="170" r="115" stroke="#47843b"></circle>
+            <circle cx="170" cy="170" r="90" stroke="#33602a"></circle>
         </svg>
 
         <div class="text">
             <span>
                 <h2>
-                    <i class="text-success">MASTER</i><i class="text-white">FUEL</i>
+                    <i class="text-success">MASTER</i><i class="text-white"
+                        >FUEL</i
+                    >
                 </h2>
             </span>
         </div>
@@ -116,6 +122,8 @@
 
 <script is:inline>
     window.addEventListener('load', function () {
-        document.getElementById('preloader-page')?.classList.add('preloader-hide'); 
-    })
+        document
+            .getElementById('preloader-page')
+            ?.classList.add('preloader-hide');
+    });
 </script>

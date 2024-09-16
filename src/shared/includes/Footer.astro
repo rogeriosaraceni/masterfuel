@@ -1,11 +1,13 @@
 ---
-import BtnScrollToTop from "@components/BtnScrollToTop.astro";
+import BtnScrollToTop from '@components/BtnScrollToTop.astro';
 ---
 
 <footer class="footer">
     <div class="container">
         <div class="footer-content text-center">
-            <div class="copyright">masterfuel.com.br - Todos os direitos reservados</div>
+            <div class="copyright">
+                masterfuel.com.br - Todos os direitos reservados
+            </div>
         </div>
     </div>
 </footer>
@@ -16,11 +18,17 @@ import BtnScrollToTop from "@components/BtnScrollToTop.astro";
     .footer {
         background: #000;
         font-weight: normal;
-        color: rgba(255, 255, 255, 0.6)
+        color: rgba(255, 255, 255, 0.6);
     }
 
-    .footer a      { color: var(--app-bg-green);}
-    .footer a:hover{ color: var(--app-bg-green-hover);}
+    .footer a {
+        color: var(--app-bg-green);
+    }
+    .footer a:hover {
+        color: var(--app-bg-green-hover);
+    }
 
-    .footer-content{ padding: 15px}
+    .footer-content {
+        padding: 15px;
+    }
 </style>

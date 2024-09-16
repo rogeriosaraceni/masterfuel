@@ -1,49 +1,71 @@
 ---
-import { allProducts } from '@data/products.js'
+import { allProducts } from '@data/products.js';
 ---
 
-<div 
-	id="modal-prod-all" 
-	class="modal modal-info modalBig fade" 
-	tabindex="-1"
-    aria-labelledby="infoModalLabel-prod-todos" 
-	aria-hidden="true" aria-modal="true"
+<div
+    id="modal-prod-all"
+    class="modal modal-info modalBig fade"
+    tabindex="-1"
+    aria-labelledby="infoModalLabel-prod-todos"
+    aria-hidden="true"
+    aria-modal="true"
 >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header pb-0">
-                <h2 class="modal-title" id="infoModalLabel-prod-todos">Todos os Produtos</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h2 class="modal-title" id="infoModalLabel-prod-todos">
+                    Todos os Produtos
+                </h2>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
                 <section class="section section-grey text-center">
                     <ul class="row justify-content-center list-unstyled m-0">
                         {
-                            allProducts.map(item => (
+                            allProducts.map((item) => (
                                 <li class="col-xl-3 col-lg-6 col-md-6 col-sm-12 item-box-mask">
                                     <h4 class="mb-0">{item.title}</h4>
-                                    <p class="mb-1" style="min-height: 3rem;">{item.subtitle}</p>
+                                    <p class="mb-1" style="min-height: 3rem;">
+                                        {item.subtitle}
+                                    </p>
                                     <div class="item-inner shadow text-center bg-white mb-2">
-
-                                        <div role="button" data-btn="showModal" data-show-modal={item.target}>
-                                            <img class="img-fluid" src={item.image} alt={item.alt} />
+                                        <div
+                                            role="button"
+                                            data-btn="showModal"
+                                            data-show-modal={item.target}
+                                        >
+                                            <img
+                                                class="img-fluid"
+                                                src={item.image}
+                                                alt={item.alt}
+                                            />
 
                                             <div class="mask">
                                                 <div class="mask-inner">
-                                                    <span class="content-title">{item.title}</span>
-                                                    <span class="content-desc">{item.subtitle}</span>
+                                                    <span class="content-title">
+                                                        {item.title}
+                                                    </span>
+                                                    <span class="content-desc">
+                                                        {item.subtitle}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="d-flex justify-content-center gap-2">
-                                        <button 
-                                            type="button" 
-                                            data-btn="showModal" 
-                                            data-show-modal={item.target} 
-                                            class="btn btn-primary">Saiba +
+                                        <button
+                                            type="button"
+                                            data-btn="showModal"
+                                            data-show-modal={item.target}
+                                            class="btn btn-primary"
+                                        >
+                                            Saiba +
                                         </button>
 
                                         {/* <a
@@ -66,16 +88,19 @@ import { allProducts } from '@data/products.js'
 </div>
 
 <script is:inline>
-	const btnShowModalAll = document.querySelectorAll('[data-btn="showModal"]')
+    const btnShowModalAll = document.querySelectorAll('[data-btn="showModal"]');
 
-	btnShowModalAll.forEach(btn => {
-		btn.addEventListener('click', event => {
-			event.preventDefault()
-			event.stopPropagation()
+    btnShowModalAll.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-			new bootstrap.Modal(document.getElementById(btn.dataset.showModal), {
-				keyboard: true
-			}).show();
-		});
-	});
+            new bootstrap.Modal(
+                document.getElementById(btn.dataset.showModal),
+                {
+                    keyboard: true,
+                }
+            ).show();
+        });
+    });
 </script>

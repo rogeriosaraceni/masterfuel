@@ -17,12 +17,12 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 1rem;
-    text-align: center
+    text-align: center;
 }
 .item-box .content-img img {
     margin-left: auto;
     margin-right: auto;
-    display: inline-block
+    display: inline-block;
 }
 .item-box .content-title {
     display: inline-block;
@@ -37,5 +37,5 @@
     background: #101113;
 }
 .item-box .content-desc {
-    color: #4f545e
+    color: #4f545e;
 }

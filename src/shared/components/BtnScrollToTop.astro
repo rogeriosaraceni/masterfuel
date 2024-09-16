@@ -1,12 +1,12 @@
 <style>
-    .btnScrollToTop{
+    .btnScrollToTop {
         position: fixed;
         right: 1rem;
         bottom: 2rem;
         font-size: 2rem;
         cursor: pointer;
         opacity: 0;
-        transition: .3s;
+        transition: 0.3s;
         color: var(--app-link-green);
     }
 </style>
@@ -16,12 +16,15 @@
 </span>
 
 <script is:inline>
-    addEventListener("DOMContentLoaded", function () {
-        const btnScrollToTop = document.querySelector('[data-scroll="top"]')
+    addEventListener('DOMContentLoaded', function () {
+        const btnScrollToTop = document.querySelector('[data-scroll="top"]');
 
         window.onscroll = () => {
-            window.scrollY > 10 ? (btnScrollToTop.style.opacity = 1) : (btnScrollToTop.style.opacity = 0)
-        }
-        btnScrollToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" })
-    })
+            window.scrollY > 10
+                ? (btnScrollToTop.style.opacity = 1)
+                : (btnScrollToTop.style.opacity = 0);
+        };
+        btnScrollToTop.onclick = () =>
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>

@@ -1,27 +1,30 @@
 ---
 interface Props {
-   btnClass: string,
-   dataToastTarget: string,
-   title: string, 
+    btnClass: string;
+    dataToastTarget: string;
+    title: string;
 }
 
-const { btnClass, dataToastTarget, title } = Astro.props
+const { btnClass, dataToastTarget, title } = Astro.props;
 ---
 
-<button 
-    type="submit" 
-    class={btnClass} 
+<button
+    type="submit"
+    class={btnClass}
     data-btn="spinner"
     data-toast-target={dataToastTarget}
 >
-    <span>{title}</span>       
-    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>  
+    <span>{title}</span>
+    <span
+        class="btn-spinner spinner-border spinner-border-sm d-none"
+        role="status"
+        aria-hidden="true"></span>
 </button>
 
 <style>
-    .btn-spinner-disabled{
-        opacity: 0.8!important;
-        pointer-events: none!important; 
+    .btn-spinner-disabled {
+        opacity: 0.8 !important;
+        pointer-events: none !important;
     }
 </style>
 
@@ -29,21 +32,24 @@ const { btnClass, dataToastTarget, title } = Astro.props
     document.addEventListener('DOMContentLoaded', function () {
         const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
 
-        for(const btn of spinnerBtns) {
-            btn.addEventListener('click', (event) => {                    
+        for (const btn of spinnerBtns) {
+            btn.addEventListener('click', (event) => {
                 const form = btn.closest('form');
-                
+
                 if (form.checkValidity()) {
                     event.preventDefault();
                     btn.classList.add('btn-spinner-disabled');
-                    btn.querySelector('.btn-spinner').classList.remove('d-none');
+                    btn.querySelector('.btn-spinner').classList.remove(
+                        'd-none'
+                    );
 
                     // Pegar o valor do toastTarget
                     const toastTarget = btn.getAttribute('data-toast-target');
 
                     if (toastTarget) {
                         // Adicionar um campo oculto ao formulário com o valor do toastTarget
-                        const toastTargetInput = document.createElement('input');
+                        const toastTargetInput =
+                            document.createElement('input');
                         toastTargetInput.type = 'hidden';
                         toastTargetInput.name = 'toastTarget';
                         toastTargetInput.value = toastTarget;
@@ -52,7 +58,9 @@ const { btnClass, dataToastTarget, title } = Astro.props
 
                     setTimeout(() => {
                         btn.classList.remove('btn-spinner-disabled');
-                        btn.querySelector('.btn-spinner').classList.add('d-none');
+                        btn.querySelector('.btn-spinner').classList.add(
+                            'd-none'
+                        );
                         form.submit();
                     }, 1000);
                 }
@@ -60,4 +68,3 @@ const { btnClass, dataToastTarget, title } = Astro.props
         }
     });
 </script>
-

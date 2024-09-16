@@ -1,18 +1,18 @@
 ---
 interface Props {
-    dataBsToggle?: string,
-    dataBsTarget?: string,
-    href?: string,
-    name: string,
+    dataBsToggle?: string;
+    dataBsTarget?: string;
+    href?: string;
+    name: string;
 }
 
-const { dataBsToggle, dataBsTarget, href, name } = Astro.props
+const { dataBsToggle, dataBsTarget, href, name } = Astro.props;
 ---
 
-<a 
-    class="btn btn-ghost-primary" 
-    data-bs-toggle={dataBsToggle} 
-    data-bs-target={dataBsTarget} 
+<a
+    class="btn btn-ghost-primary"
+    data-bs-toggle={dataBsToggle}
+    data-bs-target={dataBsTarget}
     href={href}
 >
     {name}

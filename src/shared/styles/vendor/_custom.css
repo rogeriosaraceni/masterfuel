@@ -8,20 +8,20 @@
 /* --------------------------------------------------------------------
 * - fancybox
 * -------------------------------------------------------------------- */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .fancybox__slide {
         padding: 64px 64px;
     }
 }
-.fancybox__content{
+.fancybox__content {
     width: 100%;
     height: 100%;
 }
 .fancybox__container {
     z-index: 1060;
 }
-.fancybox__carousel .fancybox__slide.has-iframe .fancybox__content, 
-.fancybox__carousel .fancybox__slide.has-map .fancybox__content, 
+.fancybox__carousel .fancybox__slide.has-iframe .fancybox__content,
+.fancybox__carousel .fancybox__slide.has-map .fancybox__content,
 .fancybox__carousel .fancybox__slide.has-pdf .fancybox__content {
     width: 100%;
     height: 100%;

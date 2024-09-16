@@ -17,7 +17,7 @@
 
 .home-carousel-holder .carousel-item {
     -webkit-animation: zoom 5s ease-in-out;
-    animation: zoom 5s ease-in-out
+    animation: zoom 5s ease-in-out;
 }
 
 .home-carousel-holder .slide-img-cover {
@@ -35,7 +35,7 @@
 
 .home-carousel-holder .carousel-item {
     -webkit-animation: zoom 5s ease-in-out;
-    animation: zoom 5s ease-in-out
+    animation: zoom 5s ease-in-out;
 }
 .home-carousel-holder .carousel-control-next,
 .home-carousel-holder .carousel-control-prev {
@@ -71,31 +71,31 @@
     margin-bottom: 2rem;
     text-indent: -9999px;
     overflow: hidden;
-    background-size: contain
+    background-size: contain;
 }
 .home-content .tagline {
     font-size: 1.7rem;
-    margin-bottom: 3rem
+    margin-bottom: 3rem;
 }
 
 @-webkit-keyframes zoom {
     from {
-        -webkit-transform: scale(1.5, 1.5)
+        -webkit-transform: scale(1.5, 1.5);
     }
 
     to {
-        -webkit-transform: scale(1, 1)
+        -webkit-transform: scale(1, 1);
     }
 }
 
 @keyframes zoom {
     from {
         -webkit-transform: scale(1.5, 1.5);
-        transform: scale(1.5, 1.5)
+        transform: scale(1.5, 1.5);
     }
 
     to {
         -webkit-transform: scale(1, 1);
-        transform: scale(1, 1)
+        transform: scale(1, 1);
     }
 }

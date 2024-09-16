@@ -1,24 +1,32 @@
 ---
 interface Props {
-    dataToastType: string,
-    bgColorClass: string,
-    textColorClass: string,
-    icon: string,
-    msg?: string,
-    msgError?: string,
-    btnCloseColorClass?: string
+    dataToastType: string;
+    bgColorClass: string;
+    textColorClass: string;
+    icon: string;
+    msg?: string;
+    msgError?: string;
+    btnCloseColorClass?: string;
 }
 
-const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnCloseColorClass} = Astro.props
+const {
+    dataToastType,
+    bgColorClass,
+    textColorClass,
+    icon,
+    msg,
+    msgError,
+    btnCloseColorClass,
+} = Astro.props;
 ---
 
 <div class="toast-container toast-app">
-    <div 
-        data-toast-type={dataToastType}             
-        class="toast" 
-        role="alert" 
-        aria-live="assertive" 
-        aria-atomic="true" 
+    <div
+        data-toast-type={dataToastType}
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
     >
         <div class={bgColorClass}>
             <div class={textColorClass}>
@@ -28,14 +36,18 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnClo
                             <i class={icon}></i>
                         </div>
                         <strong>
-                            <span {...(msgError ? {'data-server-message': 'error'} : {})}>{msg}</span>
+                            <span
+                                {...msgError
+                                    ? { 'data-server-message': 'error' }
+                                    : {}}>{msg}</span
+                            >
                         </strong>
                     </div>
 
-                    <button 
-                        type="button" 
+                    <button
+                        type="button"
                         class={`btn-close ${btnCloseColorClass} me-2 m-auto`}
-                        data-bs-dismiss="toast" 
+                        data-bs-dismiss="toast"
                         aria-label="Close"
                     >
                     </button>
@@ -46,13 +58,13 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnClo
 </div>
 
 <style>
-    .toast-container.toast-app{
+    .toast-container.toast-app {
         position: fixed;
         top: 0;
         right: 0;
         padding: 1rem;
     }
-    .toast-container.toast-app .toast{
+    .toast-container.toast-app .toast {
         align-items: center;
         border: 0;
         --bs-toast-max-width: 650px;
@@ -62,10 +74,12 @@ const { dataToastType, bgColorClass, textColorClass, icon, msg, msgError, btnClo
 <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
         const toastStatus = localStorage.getItem('toastStatus');
-        
+
         if (toastStatus) {
-            const toastElements = document.querySelectorAll(`[data-toast-type="${toastStatus}"]`);
-            toastElements.forEach(toastElement => {
+            const toastElements = document.querySelectorAll(
+                `[data-toast-type="${toastStatus}"]`
+            );
+            toastElements.forEach((toastElement) => {
                 const toast = new bootstrap.Toast(toastElement);
                 toast.show();
             });

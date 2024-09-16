@@ -1,13 +1,13 @@
 .contact-section {
     background: #101113;
-    color: rgba(255, 255, 255, 0.75)
+    color: rgba(255, 255, 255, 0.75);
 }
 .contact-section a {
-    color: rgba(255, 255, 255, 0.75)
+    color: rgba(255, 255, 255, 0.75);
 }
 .contact-section a:hover {
     color: var(--app-green-600);
 }
 .contact-section .section-title {
-    color: #fff
+    color: #fff;
 }
