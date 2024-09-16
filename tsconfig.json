@@ -5,12 +5,11 @@
         "baseUrl": ".",
         "paths": {
             "@assets/*": ["src/assets/*"],
-            "@data/*": ["src/shared/data/*"],
+            "@data/*": ["src/data/*"],
             "@layouts/*": ["src/layouts/*"],
-            "@includes/*": ["src/shared/includes/*"],
-            "@components/*": ["src/shared/components/*"],
-            "@styles/*": ["src/shared/styles/*"],
-            "@utils/*": ["src/shared/utils/*"]
+            "@components/*": ["src/components/*"],
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"]
         }
     }
 }

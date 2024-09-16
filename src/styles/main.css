@@ -2,6 +2,10 @@
 @import 'base/_variables.css';
 @import 'base/_default.css';
 
+/* Partials */
+@import 'partials/_nav.css';
+@import 'partials/_footer.css';
+
 /* Components */
 @import 'components/_buttons.css';
 @import 'components/_modal.css';
