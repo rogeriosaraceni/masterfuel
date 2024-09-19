@@ -8,17 +8,9 @@ interface Props {
 const { btnClass, dataToastTarget, title } = Astro.props;
 ---
 
-<button
-    type="submit"
-    class={btnClass}
-    data-btn="spinner"
-    data-toast-target={dataToastTarget}
->
+<button type="submit" class={btnClass} data-btn="spinner" data-toast-target={dataToastTarget}>
     <span>{title}</span>
-    <span
-        class="btn-spinner spinner-border spinner-border-sm d-none"
-        role="status"
-        aria-hidden="true"></span>
+    <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
 </button>
 
 <style>
@@ -39,17 +31,14 @@ const { btnClass, dataToastTarget, title } = Astro.props;
                 if (form.checkValidity()) {
                     event.preventDefault();
                     btn.classList.add('btn-spinner-disabled');
-                    btn.querySelector('.btn-spinner').classList.remove(
-                        'd-none'
-                    );
+                    btn.querySelector('.btn-spinner').classList.remove('d-none');
 
                     // Pegar o valor do toastTarget
                     const toastTarget = btn.getAttribute('data-toast-target');
 
                     if (toastTarget) {
                         // Adicionar um campo oculto ao formulário com o valor do toastTarget
-                        const toastTargetInput =
-                            document.createElement('input');
+                        const toastTargetInput = document.createElement('input');
                         toastTargetInput.type = 'hidden';
                         toastTargetInput.name = 'toastTarget';
                         toastTargetInput.value = toastTarget;
@@ -58,9 +47,7 @@ const { btnClass, dataToastTarget, title } = Astro.props;
 
                     setTimeout(() => {
                         btn.classList.remove('btn-spinner-disabled');
-                        btn.querySelector('.btn-spinner').classList.add(
-                            'd-none'
-                        );
+                        btn.querySelector('.btn-spinner').classList.add('d-none');
                         form.submit();
                     }, 1000);
                 }

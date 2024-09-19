@@ -1,0 +1,112 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ButtonSubmitSpinnerToast from '@components/ButtonSubmitSpinnerToast.astro';
+import ToastEnv from '@components/Toasts/ToastEnv.astro';
+import ToastError from '@components/Toasts/ToastError.astro';
+---
+
+<ToastEnv />
+<ToastError />
+
+<Layout>
+    <main class="main-content">
+        <section id="contato" class="section contact-section">
+            <div class="container text-center" style="padding-top: 4rem;">
+                <form id="formID">
+                    <section class="row mb-4">
+                        <label class="col-md-6"
+                            >Nome:
+                            <input type="text" name="nome" class="form-control" />
+                        </label>
+
+                        <label class="col-md-6"
+                            >E-mail
+                            <input type="email" name="email" class="form-control" />
+                        </label>
+
+                        <label class="col-md-12"
+                            >O que podemos ajudá-lo?
+                            <textarea name="mensagem" rows="5" class="form-control"></textarea>
+                        </label>
+                    </section>
+
+                    <!-- 
+                    <div class="text-center">
+                        <ButtonSubmitSpinnerToast
+                            btnClass="btn btn-ghost-primary"
+                            dataToastTarget="env"
+                            title="Enviar mensagem"
+                        />
+                    </div> 
+                    -->
+
+                    <button type="submit" name="action" value="cad" data-btn="spinner" class="btn btn-primary">
+                        <span>Salvar</span>
+                        <span
+                            class="btn-spinner spinner-border spinner-border-sm d-none"
+                            role="status"
+                            aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<script is:inline>
+    const submitForm = () => {
+        const formID = document.querySelector('#formID');
+
+        if (!formID) return;
+
+        formID.addEventListener('submit', async function (event) {
+            event.preventDefault();
+            let formData = new FormData(formID);
+
+            try {
+                const response = await fetch('./process-form.asp', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erro ao processar o formulário');
+                }
+
+                const result = await response.json();
+                //mostrar toast de success
+                console.log(result);
+            } catch (error) {
+                log.error('Error', error);
+                //mostrar toast de erro
+            }
+        });
+    };
+    submitForm();
+
+    /** --------------------------------------------------------------------
+     * spinnerBtns
+    --------------------------------------------------------------------- */
+    function initSpinnerBtns() {
+        const spinnerBtns = document.querySelectorAll('[data-btn="spinner"]');
+
+        for (const btn of spinnerBtns) {
+            btn.addEventListener('click', (event) => {
+                const form = btn.closest('form');
+
+                if (form.checkValidity()) {
+                    event.preventDefault();
+                    btn.classList.add('btn-spinner-disabled');
+                    btn.querySelector('.btn-spinner').classList.remove('d-none');
+
+                    setTimeout(() => {
+                        btn.classList.remove('btn-spinner-disabled');
+                        btn.querySelector('.btn-spinner').classList.add('d-none');
+                        form.submit();
+                    }, 1000);
+                }
+            });
+        }
+    }
+    //initSpinnerBtns();
+</script>
