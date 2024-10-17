@@ -1,5 +1,12 @@
 ---
-const navLinks = [
+interface Props {
+    name: string;
+    href: string;
+    external?: string;
+    icon?: string;
+}
+
+const navLinks: Props[] = [
     {
         name: 'Home',
         href: '#home',
@@ -13,22 +20,20 @@ const navLinks = [
         href: '#suporte',
     },
     {
-        name: 'Comprar',
-        href: 'https://masterfuel.myshopify.com/',
-        external: true,
-        icon: 'bi bi-bag-check',
-    },
-    {
         name: 'Contato',
         href: '#contato',
-    },
-    {
-        name: 'Teste',
-        href: './form/',
     },
 ];
 ---
 
+<!-- 
+{
+    name: 'Comprar',
+    href: 'https://masterfuel.myshopify.com/',
+    external: true,
+    icon: 'bi bi-bag-check',
+}, 
+-->
 <header id="header" class="header fixed-top">
     <div class="container">
         <nav class="main-nav navbar navbar-expand-md" role="navigation">
@@ -83,10 +88,13 @@ const navLinks = [
     }
 
     const btnNavMobile = document.querySelector('[data-bs-target="#navbar-collapse"]');
-    const navMoibile = document.querySelector('#navbar-collapse');
+    const navMobile = document.querySelector('#navbar-collapse');
 
-    window.addEventListener('click', () => {
-        btnNavMobile.classList.remove('collapsed');
-        navMoibile.classList.remove('show');
+    window.addEventListener('click', (event) => {
+        const isClickInside = btnNavMobile.contains(event.target) || navMobile.contains(event.target);
+        if (!isClickInside) {
+            btnNavMobile.classList.remove('collapsed');
+            navMobile.classList.remove('show');
+        }
     });
 </script>

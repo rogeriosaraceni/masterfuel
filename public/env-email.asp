@@ -11,7 +11,7 @@
 
             'Email From e AddAddress
             Dim emailFromAddAddress
-            emailFromAddAddress = "dev@masterfuel.com.br"
+            emailFromAddAddress = "masterfuel@masterfuel.com.br"
 
             'Configurando o objeto de e-mail
             Set Mail = Server.CreateObject("Persits.MailSender")
