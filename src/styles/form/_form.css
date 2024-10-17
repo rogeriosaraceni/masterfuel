@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------
+* - form
+* -------------------------------------------------------------------- */
+.form-control {
+    box-shadow: none;
+    border-color: #eee;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #ccc;
+}
+.form-control:-moz-placeholder {
+    color: #ccc;
+}
+.form-control::-moz-placeholder {
+    color: #ccc;
+}
+.form-control:-ms-input-placeholder {
+    color: #ccc;
+}
+
+.form-control:focus {
+    border-color: #e1e1e1;
+    box-shadow: none;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='submit'],
+input[type='button'],
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+label {
+    margin-bottom: 1rem;
+    color: #4cab61;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "*.asp": "asp"
+    },
+
+    "editor.formatOnSave": true,
+    "prettier.documentSelectors": ["**/*.astro"],
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[asp]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript, typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

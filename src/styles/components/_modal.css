@@ -1,0 +1,77 @@
+/* --------------------------------------------------------------------
+* - modal
+* -------------------------------------------------------------------- */
+.modal-content {
+    padding: 1rem;
+    border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.modal-body {
+    font-size: 16px;
+    color: #4f545e;
+}
+.modal-body iframe {
+    max-width: 100%;
+}
+
+.modal-header {
+    border: none;
+    position: relative;
+    justify-content: center !important;
+}
+.modal button.btn-close:focus {
+    box-shadow: none;
+}
+
+.modal-backdrop.in {
+    -webkit-opacity: 0.9;
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+}
+.modal.modal-video .modal-dialog {
+    margin-top: 90px;
+}
+.modal.modal-video .modal-body {
+    padding: 0;
+    padding-top: 0;
+}
+.modal.modal-video .modal-header {
+    border: none;
+    padding: 0;
+}
+.modal.modal-video .modal-content {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.modal.modal-video button.close {
+    color: #fff;
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    background: none;
+    position: absolute;
+    top: inherit;
+    right: 0px;
+    bottom: 5px;
+    z-index: 10;
+}
+.modal.modal-video button.close:hover {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------
+* - modalBig
+* -------------------------------------------------------------------- */
+.modal.modalBig .modal-dialog {
+    width: 90%;
+}
+@media (min-width: 576px) {
+    .modal.modalBig .modal-dialog {
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,128 @@
+/* --------------------------------------------------------------------
+* - html/body/main-content
+* -------------------------------------------------------------------- */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: #101113;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* --------------------------------------------------------------------
+* - h1,h2,h3,h4,h5,h6 / link
+* -------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------
+* - alert
+* -------------------------------------------------------------------- */
+.alert {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1111;
+    margin: 1rem;
+    border: 0;
+}
+
+.alert.alert-success {
+    color: #fff;
+    background-color: #6eac20;
+}
+.alert.alert-success .btn-close {
+    background-color: #fff;
+}
+
+/* --------------------------------------------------------------------
+* - a link
+* -------------------------------------------------------------------- */
+a {
+    color: #5bb66f;
+    text-decoration: none;
+}
+a {
+    color: #5bb66f;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+    color: #4cab61;
+    transition: all 0.4s ease-in-out;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #4cab61;
+    outline: none;
+}
+
+/* --------------------------------------------------------------------
+* - card
+* -------------------------------------------------------------------- */
+.card {
+    border-radius: 0;
+}
+
+/* --------------------------------------------------------------------
+* - Scrollbar CSS v1.2
+* - Last update: 06 jul 2021
+* - Rogerio Saraceni
+* -------------------------------------------------------------------- */
+:root {
+    --scrollbar-bg: #f7f2f2;
+    --scrollbar-bg-track: #bebcbc;
+    --scrollbar-bg-thumb: #bbb5b5;
+    --scrollbar-vertical: 8px;
+    --scrollbar-horizontal: 8px;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-bg-track) var(--scrollbar-bg);
+}
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar {
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: var(--scrollbar-bg-track);
+}
+
+/* --------------------------------------------------------------------
+* - custom classes
+* -------------------------------------------------------------------- */
+.blur {
+    box-shadow: inset 0 0 2px #fefefed1;
+    -webkit-backdrop-filter: saturate(200%) blur(30px);
+    backdrop-filter: saturate(200%) blur(30px);
+    background-color: hsla(0, 0%, 100%, 0.8) !important;
+}

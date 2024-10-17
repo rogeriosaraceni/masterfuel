@@ -1,0 +1,25 @@
+/* --------------------------------------------------------------------
+* - variables
+* -------------------------------------------------------------------- */
+:root {
+    --bs-success-rgb: 91, 182, 111;
+
+    --app-green-400: #5bb66f;
+    --app-green-600: #3d884d;
+
+    --app-grey-400: #f5f5f5;
+    --app-grey-600: #eae6e6;
+
+    --app-link-green: var(--app-green-400);
+    --app-link-green-hover: var(--app-green-600);
+
+    --app-bg-green: var(--app-green-400);
+    --app-bg-green-hover: var(--app-green-600);
+
+    --app-bg-grey: var(--app-grey-400);
+    --app-bg-grey-hover: var(--app-grey-600);
+}
+
+.section-grey {
+    background-color: var(--app-bg-grey);
+}

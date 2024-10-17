@@ -1,0 +1,29 @@
+---
+import BtnGhost from '@components/BtnGhost.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import ContentModalPSA10 from './_content-modal-PSA10.astro';
+import ContentModalTBIVWDupla from './_content-modal-TBI-VW-Dupla.astro';
+import ContentModalTBI from './_content-modal-TBI.astro';
+import ContentModalAll from './_content-modal-all.astro';
+import ContentSplide from './_content-splide.astro';
+---
+
+<section id="produtos" class="section section-grey text-center">
+    <SectionTitle title="Produtos" />
+
+    <ContentSplide />
+
+    <div class="mt-4">
+        <BtnGhost
+            type="button"
+            dataBsToggle="modal"
+            dataBsTarget="#modal-prod-all"
+            title="Veja Todos Produtos"
+        />
+    </div>
+</section>
+
+<ContentModalAll />
+<ContentModalPSA10 />
+<ContentModalTBI />
+<ContentModalTBIVWDupla />

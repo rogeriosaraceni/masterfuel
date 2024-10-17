@@ -1,0 +1,177 @@
+---
+const imagesTBI = [
+    {
+        imageBig: './assets/images/produtos/TBI/big/01.jpg',
+        imageMini: './assets/images/produtos/TBI/mini/01.jpg',
+    },
+    {
+        imageBig: './assets/images/produtos/TBI/big/02.jpg',
+        imageMini: './assets/images/produtos/TBI/mini/02.jpg',
+    },
+    {
+        imageBig: './assets/images/produtos/TBI/big/03.jpg',
+        imageMini: './assets/images/produtos/TBI/mini/03.jpg',
+    },
+    {
+        imageBig: './assets/images/produtos/TBI/big/04.jpg',
+        imageMini: './assets/images/produtos/TBI/mini/04.jpg',
+    },
+    {
+        imageBig: './assets/images/produtos/TBI/big/05.jpg',
+        imageMini: './assets/images/produtos/TBI/mini/05.jpg',
+    },
+];
+---
+
+<div
+    id="modal-TBI"
+    class="modal modal-info modalBig fade"
+    tabindex="-1"
+    aria-labelledby="infoModalLabel-TBI"
+    aria-hidden="true"
+    aria-modal="true"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5 mb-7 mb-lg-0">
+                        <section class="section section-grey text-center h-100">
+                            <article
+                                class="splide splide-default"
+                                id="splide-prod-TBI"
+                            >
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        {
+                                            imagesTBI.map((item) => (
+                                                <li class="splide__slide item-box-mask">
+                                                    <h4>TBI</h4>
+                                                    <div
+                                                        class="item-inner"
+                                                        data-aos="flip-right"
+                                                        data-aos-duration="1000"
+                                                    >
+                                                        <a
+                                                            class="shadow text-center"
+                                                            data-fancybox="TBI"
+                                                            href={item.imageBig}
+                                                        >
+                                                            <img
+                                                                class="img-fluid"
+                                                                src={
+                                                                    item.imageMini
+                                                                }
+                                                                alt="Sensor Pressão 10 bar"
+                                                            />
+
+                                                            <div class="mask">
+                                                                <span class="mask-inner">
+                                                                    <span class="btn btn-primary">
+                                                                        <i class="bi bi-zoom-in" />
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
+                                </div><!-- splide__track -->
+                            </article><!-- splide -->
+                        </section>
+                    </div>
+
+                    <div class="col-lg-7 d-flex flex-column">
+                        <div class="ps-lg-4 flex-grow-1">
+                            <div class="mb-6">
+                                <h2>TBI com borboleta de 32 mm</h2>
+
+                                <p>Equipamento de fácil instalação.</p>
+
+                                <p>
+                                    A TBI 32mm da MasterFuel foi desenvolvida
+                                    para usar o coletor de admissão original do
+                                    motor VW 1300, 1500 ou 1600cc a ar com
+                                    carburação simples, assim não preciso
+                                    nenhuma adaptação.
+                                </p>
+
+                                <p>
+                                    Esqueça os problemas do carburador, e
+                                    instala hoje mesmo a TBI 32mm em seu motor
+                                    VW a ar.
+                                </p>
+
+                                <p>
+                                    Não esqueça que para o seu motor funcionar
+                                    com a nossa TBI e necessária a instalação de
+                                    uma injeção programável de combustível.
+                                </p>
+
+                                <h5>A TBI acompanha:</h5>
+                                <ul>
+                                    <li>Corpo em alumínio</li>
+                                    <li>Bico injetor</li>
+                                    <li>TPS</li>
+                                    <li>Conexão para combustível</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="d-flex justify-content-end">
+                            <!--
+                            <a
+                                class="btn btn-primary"
+                                href=""
+                                target="_blank">
+                                <i class="bi bi-bag-check"></i>
+                                <span class="ms-1">Comprar</span>
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    addEventListener('load', () => {
+        new Splide('#splide-prod-TBI', {
+            gap: '2.5rem',
+
+            padding: {
+                right: '2rem',
+                left: '2rem',
+            },
+
+            perPage: 1,
+            rewind: true,
+
+            breakpoints: {
+                1500: {
+                    perPage: 1,
+                },
+                1000: {
+                    perPage: 1,
+                },
+                768: {
+                    perPage: 1,
+                },
+            },
+        }).mount();
+    });
+</script>

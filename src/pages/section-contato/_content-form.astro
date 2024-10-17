@@ -1,0 +1,47 @@
+---
+import ButtonSubmitSpinnerToast from '@components/ButtonSubmitSpinnerToast.astro';
+import ToastEnv from '@components/Toasts/ToastEnv.astro';
+import ToastError from '@components/Toasts/ToastError.astro';
+---
+
+<ToastEnv />
+<ToastError />
+
+<div class="contact-block">
+    <div class="text-center">
+        <h2 class="section-title">Se preferir preencha nosso formulário</h2>
+    </div>
+
+    <form method="post" action="./env-email.asp">
+        <section class="row mb-4">
+            <label class="col-md-6"
+                >Nome:
+                <input type="text" name="nome" class="form-control" required />
+            </label>
+
+            <label class="col-md-6"
+                >E-mail
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    required
+                />
+            </label>
+
+            <label class="col-md-12"
+                >O que podemos ajudá-lo?
+                <textarea name="mensagem" rows="5" class="form-control" required
+                ></textarea>
+            </label>
+        </section>
+
+        <div class="text-center">
+            <ButtonSubmitSpinnerToast
+                btnClass="btn btn-ghost-primary"
+                dataToastTarget="env"
+                title="Enviar mensagem"
+            />
+        </div>
+    </form>
+</div>
