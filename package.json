@@ -13,7 +13,7 @@
         "prettier": "npx prettier --write ."
     },
     "dependencies": {
-        "astro": "^4.15.5"
+        "astro": "^5.2.3"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^8.5.0",
