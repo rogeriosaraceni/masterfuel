@@ -12,31 +12,16 @@ import { allProducts } from 'src/data/products.js';
                         <p class="mb-1">{item.subtitle}</p>
 
                         <div class="item-inner shadow text-center bg-white">
-                            <div
-                                role="button"
-                                data-bs-toggle="modal"
-                                data-bs-target={`#${item.target}`}
-                            >
-                                <img
-                                    class="img-fluid"
-                                    src={item.image}
-                                    alt={item.alt}
-                                />
+                            <div role="button" data-bs-toggle="modal" data-bs-target={`#${item.target}`}>
+                                <img class="img-fluid" src={item.image} alt={item.alt} />
 
                                 <div class="mask pe-none">
                                     <div class="mask-inner">
-                                        <p class="content-title">
-                                            {item.title}
-                                        </p>
-                                        <p class="content-desc">
-                                            {item.subtitle}
-                                        </p>
+                                        <p class="content-title">{item.title}</p>
+                                        <p class="content-desc">{item.subtitle}</p>
 
                                         <div class="d-flex gap-2">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary btn-cta pe-auto"
-                                            >
+                                            <button type="button" class="btn btn-primary btn-cta pe-auto">
                                                 Saiba +
                                             </button>
 
@@ -66,7 +51,7 @@ import { allProducts } from 'src/data/products.js';
                 left: '2rem',
             },
 
-            perPage: 3,
+            perPage: 4,
             rewind: true,
 
             breakpoints: {

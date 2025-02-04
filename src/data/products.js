@@ -27,4 +27,13 @@ export const allProducts = [
         alt: 'TBI VW IDF',
         linkShopify: '',
     },
+    {
+        id: 'KitTBIVwDupla',
+        title: 'Kit TBI VW Dupla',
+        subtitle: 'Conjunto throttle body para VW a ar',
+        target: 'modal-KitTBIVwDupla',
+        image: './assets/images/produtos/KitTBIVwDupla/cover.jpg',
+        alt: 'Kit TBI VW Dupla',
+        linkShopify: '',
+    },
 ];
