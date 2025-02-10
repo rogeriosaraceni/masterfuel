@@ -1,6 +1,16 @@
 // src/data/products.js
 export const allProducts = [
     {
+        id: 'InjecaoProgramavel',
+        title: 'Injeção Programável',
+        subtitle: 'Ajuste Perfeito para Qualquer Motor!',
+        target: 'modal-InjecaoProgramavel',
+        image: './assets/images/produtos/InjecaoProgramavel/cover.jpg',
+        alt: 'Injeção Programável',
+        linkShopify: '',
+        breve: 'Em Breve!',
+    },
+    {
         id: 'PSA10',
         title: 'PSA10',
         subtitle: 'Sensor Pressão 10 bar',
@@ -8,6 +18,7 @@ export const allProducts = [
         image: './assets/images/produtos/PSA10/cover.jpg',
         alt: 'PSA10',
         linkShopify: 'https://masterfuel.myshopify.com/products/PSA10',
+        breve: '',
     },
     {
         id: 'TBI',
@@ -17,6 +28,7 @@ export const allProducts = [
         image: './assets/images/produtos/TBI/cover.jpg',
         alt: 'TBI',
         linkShopify: '',
+        breve: '',
     },
     {
         id: 'TBIVwIDF',
@@ -26,6 +38,7 @@ export const allProducts = [
         image: './assets/images/produtos/TBIVwIDF/cover.jpg',
         alt: 'TBI VW IDF',
         linkShopify: '',
+        breve: '',
     },
     {
         id: 'KitTBIVwDupla',
@@ -35,5 +48,6 @@ export const allProducts = [
         image: './assets/images/produtos/KitTBIVwDupla/cover.jpg',
         alt: 'Kit TBI VW Dupla',
         linkShopify: '',
+        breve: '',
     },
 ];

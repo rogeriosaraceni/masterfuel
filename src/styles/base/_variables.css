@@ -23,3 +23,17 @@
 .section-grey {
     background-color: var(--app-bg-grey);
 }
+
+.text-app-green-400 {
+    color: var(--app-green-400);
+}
+.text-app-green-600 {
+    color: var(--app-green-600);
+}
+
+.bg-app-green-400 {
+    background-color: var(--app-green-400);
+}
+.bg-app-green-600 {
+    background-color: var(--app-green-600);
+}
