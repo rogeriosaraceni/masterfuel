@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding-top: 3rem;
+    padding-top: 2rem;
     height: 100%;
 }
 .home-content .logo-home {
@@ -74,7 +74,7 @@
     background-size: contain;
 }
 .home-content .tagline {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-bottom: 3rem;
 }
 
