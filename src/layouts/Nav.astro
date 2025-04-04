@@ -2,7 +2,7 @@
 interface Props {
     name: string;
     href: string;
-    external?: string;
+    external?: boolean;
     icon?: string;
 }
 
@@ -19,17 +19,15 @@ const navLinks: Props[] = [
         name: 'Contato',
         href: '#contato',
     },
+    {
+        name: 'Loja',
+        href: 'https://lojamasterfuel.com.br/',
+        external: true,
+        icon: 'bi bi-bag-check',
+    },
 ];
 ---
 
-<!-- 
-{
-    name: 'Comprar',
-    href: 'https://masterfuel.myshopify.com/',
-    external: true,
-    icon: 'bi bi-bag-check',
-}, 
--->
 <header id="header" class="header fixed-top">
     <div class="container">
         <nav class="main-nav navbar navbar-expand-md" role="navigation">
