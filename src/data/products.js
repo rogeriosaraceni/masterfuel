@@ -8,7 +8,7 @@ export const allProducts = [
         image: './assets/images/produtos/InjecaoProgramavel/cover.jpg',
         alt: 'Injeção Programável',
         linkShopify: '',
-        breve: 'Em Breve!',
+        breve: '',
     },
     {
         id: 'PSA10',

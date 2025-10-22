@@ -1,7 +1,7 @@
 .home-section {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 600px;
     color: #fff;
     overflow: hidden;
     background: #101113;
@@ -26,17 +26,11 @@
     background-position: center center;
 }
 
-.home-carousel-holder .carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 70vh;
-}
-
 .home-carousel-holder .carousel-item {
     -webkit-animation: zoom 5s ease-in-out;
     animation: zoom 5s ease-in-out;
 }
+
 .home-carousel-holder .carousel-control-next,
 .home-carousel-holder .carousel-control-prev {
     z-index: 20;
@@ -61,6 +55,7 @@
     padding-top: 2rem;
     height: 100%;
 }
+
 .home-content .logo-home {
     height: 100px;
     text-align: center;
@@ -73,6 +68,7 @@
     overflow: hidden;
     background-size: contain;
 }
+
 .home-content .tagline {
     font-size: 1.5rem;
     margin-bottom: 3rem;

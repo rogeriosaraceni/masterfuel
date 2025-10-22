@@ -12,17 +12,14 @@ const imagesKitTBIVwDupla = [
         imageBig: './assets/images/produtos/KitTBIVwDupla/big/03.jpg',
         imageMini: './assets/images/produtos/KitTBIVwDupla/mini/03.jpg',
     },
+    {
+        imageBig: './assets/images/produtos/KitTBIVwDupla/big/04.jpg',
+        imageMini: './assets/images/produtos/KitTBIVwDupla/mini/04.jpg',
+    },
 ];
 ---
 
-<div
-    id="modal-KitTBIVwDupla"
-    class="modal modal-info modalBig fade"
-    tabindex="-1"
-    aria-labelledby="infoModalLabel-KitTBIVwDupla"
-    aria-hidden="true"
-    aria-modal="true"
->
+<div id="modal-KitTBIVwDupla" class="modal modal-info modalBig fade" tabindex="-1" aria-labelledby="infoModalLabel-KitTBIVwDupla" aria-hidden="true" aria-modal="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -40,21 +37,9 @@ const imagesKitTBIVwDupla = [
                                             imagesKitTBIVwDupla.map((item) => (
                                                 <li class="splide__slide item-box-mask">
                                                     <h4>Kit TBI Dupla VW</h4>
-                                                    <div
-                                                        class="item-inner"
-                                                        data-aos="flip-right"
-                                                        data-aos-duration="1000"
-                                                    >
-                                                        <a
-                                                            class="shadow text-center"
-                                                            data-fancybox="KitTBIDupla"
-                                                            href={item.imageBig}
-                                                        >
-                                                            <img
-                                                                class="img-fluid"
-                                                                src={item.imageMini}
-                                                                alt="Sensor Pressão 10 bar"
-                                                            />
+                                                    <div class="item-inner" data-aos="flip-right" data-aos-duration="1000">
+                                                        <a class="shadow text-center" data-fancybox="KitTBIDupla" href={item.imageBig}>
+                                                            <img class="img-fluid" src={item.imageMini} alt="Sensor Pressão 10 bar" />
 
                                                             <div class="mask">
                                                                 <span class="mask-inner">
@@ -81,10 +66,7 @@ const imagesKitTBIVwDupla = [
 
                                 <p>Conjunto throttle body para VW a ar.</p>
 
-                                <p>
-                                    O conjunto de throttle body para VW a ar são feitos em alumínio, com rolamentos nos
-                                    eixos e vedação por anel o-ring.
-                                </p>
+                                <p>O conjunto de throttle body para VW a ar são feitos em alumínio, com rolamentos nos eixos e vedação por anel o-ring.</p>
 
                                 <p>Diâmetro da borboleta 40mm, acabamento pintura epóxi ou natural.</p>
 

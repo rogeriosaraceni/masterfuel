@@ -7,14 +7,7 @@ const imagesInjecaoProgramavel = [
 ];
 ---
 
-<div
-    id="modal-InjecaoProgramavel"
-    class="modal modal-info modalBig fade"
-    tabindex="-1"
-    aria-labelledby="infoModalLabel-InjecaoProgramavel"
-    aria-hidden="true"
-    aria-modal="true"
->
+<div id="modal-InjecaoProgramavel" class="modal modal-info modalBig fade" tabindex="-1" aria-labelledby="infoModalLabel-InjecaoProgramavel" aria-hidden="true" aria-modal="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -32,21 +25,9 @@ const imagesInjecaoProgramavel = [
                                             imagesInjecaoProgramavel.map((item) => (
                                                 <li class="splide__slide item-box-mask">
                                                     <h4>Injeção Programável</h4>
-                                                    <div
-                                                        class="item-inner"
-                                                        data-aos="flip-right"
-                                                        data-aos-duration="1000"
-                                                    >
-                                                        <a
-                                                            class="shadow text-center"
-                                                            data-fancybox="InjecaoProgramavel"
-                                                            href={item.imageBig}
-                                                        >
-                                                            <img
-                                                                class="img-fluid"
-                                                                src={item.imageMini}
-                                                                alt="Sensor Pressão 10 bar"
-                                                            />
+                                                    <div class="item-inner" data-aos="flip-right" data-aos-duration="1000">
+                                                        <a class="shadow text-center" data-fancybox="InjecaoProgramavel" href={item.imageBig}>
+                                                            <img class="img-fluid" src={item.imageMini} alt="Sensor Pressão 10 bar" />
 
                                                             <div class="mask">
                                                                 <span class="mask-inner">
@@ -70,10 +51,6 @@ const imagesInjecaoProgramavel = [
                         <div class="ps-lg-4 flex-grow-1">
                             <div class="mb-6">
                                 <h2>Injeção Programável</h2>
-
-                                <p>
-                                    <span class="h4 text-white py-1 px-2 bg-app-green-600">Em Breve!</span>
-                                </p>
 
                                 <div style="max-height: 400px; overflow: auto;">
                                     <h5>Descrição:</h5>
@@ -104,13 +81,8 @@ const imagesInjecaoProgramavel = [
                                         <li>Entrada para sensor de pressão de óleo e combustível;</li>
                                         <li>Controle de ar-condicionado,</li>
 
-                                        <li>
-                                            Sensor MAP interno de 400kPa absolutos, sendo 100kPa relativo ao vácuo e
-                                            300kPa de pressão positiva;
-                                        </li>
-                                        <li>
-                                            Sensor de posição da borboleta (TPS) calibrável para qualquer sensor linear,
-                                        </li>
+                                        <li>Sensor MAP interno de 400kPa absolutos, sendo 100kPa relativo ao vácuo e 300kPa de pressão positiva;</li>
+                                        <li>Sensor de posição da borboleta (TPS) calibrável para qualquer sensor linear,</li>
                                         <li>Sensor de temperatura do motor e do ar da admissão;</li>
                                         <li>Leitura da sonda banda larga ou estreita;</li>
 
