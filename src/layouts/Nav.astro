@@ -23,7 +23,7 @@ const navLinks = [
 
 <header id="header" class="header fixed-top">
     <div class="container">
-        <nav class="main-nav navbar navbar-expand-md" role="navigation">
+        <nav class="main-nav navbar navbar-expand-md align-items-baseline" role="navigation">
             <button
                 class="navbar-toggler navbar-dark"
                 type="button"
@@ -36,8 +36,12 @@ const navLinks = [
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <a class="navbar-brand" href="#">
+                <img src="/assets/images/logo.png" alt="logo" width="150px" />
+            </a>
+
             <div id="navbar-collapse" class="navbar-collapse collapse text-center justify-content-center">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav ms-auto">
                     {
                         navLinks.map((link) => (
                             <li class="nav-item">
