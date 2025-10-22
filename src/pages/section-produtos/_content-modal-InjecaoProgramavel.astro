@@ -118,7 +118,10 @@ const imagesInjecaoProgramavel = [
 
 <script is:inline>
     addEventListener('load', () => {
-        new Splide('#splide-prod-InjecaoProgramavel', {
+        const splideEl = document.querySelector('#splide-prod-InjecaoProgramavel');
+        const slides = splideEl.querySelectorAll('.splide__slide');
+
+        new Splide(splideEl, {
             gap: '2.5rem',
 
             padding: {
@@ -141,5 +144,10 @@ const imagesInjecaoProgramavel = [
                 },
             },
         }).mount();
+
+        if (slides.length <= 1) {
+            const arrows = splideEl.querySelectorAll('.splide__arrow');
+            arrows.forEach((arrow) => (arrow.style.display = 'none'));
+        }
     });
 </script>

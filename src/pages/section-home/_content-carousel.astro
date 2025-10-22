@@ -11,14 +11,21 @@
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-btn="carousel" data-bs-target="#home-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
         </button>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-btn="carousel" data-bs-target="#home-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
         </button>
     </div>
 </div>
+
+<script is:inline>
+    const images = document.querySelectorAll('.carousel-item');
+    const btns = document.querySelectorAll('[data-btn="carousel"]');
+
+    btns.forEach((item) => {
+        images.length <= 1 ? item.classList.add('d-none') : item.classList.remove('d-none');
+    });
+</script>
