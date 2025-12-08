@@ -9,6 +9,17 @@ const navLinks = [
         href: '#produtos',
     },
     {
+        name: 'Downloads',
+        dropdown: true,
+        dropdownItems: [
+            {
+                name: 'Software',
+                href: '/downloads/nome-do-arquivo.zip',
+                download: true, // Adiciona o atributo 'download' para baixar o arquivo
+            },
+        ],
+    },
+    {
         name: 'Contato',
         href: '#contato',
     },
@@ -20,6 +31,61 @@ const navLinks = [
     },
 ];
 ---
+
+<style>
+/* default */
+.main-nav .nav-link:hover,
+.main-nav .nav-link:focus,
+.main-nav .nav-link:active,
+.main-nav .dropdown-item:hover,
+.main-nav .nav-link.show{
+    color: #6eac20;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    padding: 10px 0;
+}
+.dropdown-item {
+    padding: 10px 20px;
+    transition: all 0.2s;
+}
+.dropdown-item:hover {
+    padding-left: 25px;
+    background-color: transparent;
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu.dropdown-menu-effect {
+        overflow: hidden;
+        padding: 0;
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        pointer-events: none;
+    }
+    
+    .nav-item.dropdown:hover > .dropdown-menu.dropdown-menu-effect{
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto;
+    }
+    
+    /* Hover no próprio dropdown para manter aberto */
+    .dropdown-menu.dropdown-menu-effect:hover {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+}
+</style>
 
 <header id="header" class="header fixed-top">
     <div class="container">
@@ -44,18 +110,48 @@ const navLinks = [
                 <ul class="nav navbar-nav ms-auto">
                     {
                         navLinks.map((link) => (
-                            <li class="nav-item">
-                                {link.external ? (
-                                    <a class="nav-link" href={link.href} target="_blank">
-                                        <i class={link.icon} />
-                                        <span class="me-1">{link.name}</span>
-                                    </a>
-                                ) : (
-                                    <a class="nav-link" href={link.href}>
+                            // Verifica se é um dropdown
+                            link.dropdown ? (
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="#"
+                                        id={`dropdown-${link.name}`}
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
                                         {link.name}
                                     </a>
-                                )}
-                            </li>
+                                    <ul class="dropdown-menu dropdown-menu-effect" aria-labelledby={`dropdown-${link.name}`}>
+                                        {link.dropdownItems.map((item) => (
+                                            <li>
+                                                <a
+                                                    class="dropdown-item"
+                                                    href={item.href}
+                                                    {...(item.download ? { download: item.name, target: '_blank' } : {})}
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ) : (
+                                // Renderização padrão dos links (não-dropdown)
+                                <li class="nav-item">
+                                    {link.external ? (
+                                        <a class="nav-link" href={link.href} target="_blank">
+                                            <i class={link.icon} />
+                                            <span class="me-1">{link.name}</span>
+                                        </a>
+                                    ) : (
+                                        <a class="nav-link" href={link.href}>
+                                            {link.name}
+                                        </a>
+                                    )}
+                                </li>
+                            )
                         ))
                     }
                 </ul>
@@ -65,6 +161,7 @@ const navLinks = [
 </header>
 
 <script is:inline>
+    // Seus scripts de navegação...
     window.addEventListener('scroll', navAnimation);
 
     function navAnimation() {

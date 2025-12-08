@@ -1,4 +1,6 @@
 ---
+import BtnEsquemaEletrico from "@components/BtnEsquemaEletrico.astro";
+
 const imagesKitTBIVwDupla = [
     {
         imageBig: './assets/images/produtos/KitTBIVwDupla/big/01.jpg',
@@ -61,7 +63,7 @@ const imagesKitTBIVwDupla = [
 
                     <div class="col-lg-7 d-flex flex-column">
                         <div class="ps-lg-4 flex-grow-1">
-                            <div class="mb-6">
+                            <div class="box-infos-product">
                                 <h2>Kit TBI Dupla VW</h2>
 
                                 <p>Conjunto throttle body para VW a ar.</p>
@@ -91,18 +93,8 @@ const imagesKitTBIVwDupla = [
                             </div>
                         </div>
 
-                        <hr />
-
-                        <div class="d-flex justify-content-end">
-                            <!--
-                            <a
-                                class="btn btn-primary"
-                                href=""
-                                target="_blank">
-                                <i class="bi bi-bag-check"></i>
-                                <span class="ms-1">Comprar</span>
-                            </a>
-                            -->
+                        <div class="d-flex justify-content-end gap-2">
+                            <BtnEsquemaEletrico produto="Kit TBI Dupla VW" href="#" />
                         </div>
                     </div>
                 </div>
