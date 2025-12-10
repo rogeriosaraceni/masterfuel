@@ -14,7 +14,7 @@ const navLinks = [
         dropdownItems: [
             {
                 name: 'Software',
-                href: './arquivos/Masterfuel.zip',
+                href: './arquivos/Masterfuel.bin',
                 download: true, // Adiciona o atributo 'download' para baixar o arquivo
             },
         ],
@@ -116,10 +116,11 @@ const navLinks = [
                                     <a class="nav-link dropdown-toggle" href="#" id={`dropdown-${link.name}`} role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {link.name}
                                     </a>
+
                                     <ul class="dropdown-menu dropdown-menu-effect" aria-labelledby={`dropdown-${link.name}`}>
                                         {link.dropdownItems.map((item) => (
                                             <li>
-                                                <a class="dropdown-item" href={item.href} {...(item.download ? { download: item.name, target: '_blank' } : {})}>
+                                                <a class="dropdown-item" href={item.href} {...(item.download ? { download: `${item.name}.exe`, target: '_blank' } : {})}>
                                                     {item.name}
                                                 </a>
                                             </li>
