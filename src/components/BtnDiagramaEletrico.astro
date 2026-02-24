@@ -1,0 +1,16 @@
+---
+interface Props {
+    produto?: string;
+    href?: string;
+}
+
+const { produto, href } = Astro.props;
+---
+
+<a
+    class="btn btn-primary" data-bs-toggle="tooltip" data-bs-title="Download Diagrama Elétrico" data-bs-placement="top" download={`Diagrama Elétrico ${produto}`} target="_blank"
+    href={href}
+>
+    <i class="bi bi-download"></i>
+    <span>Diagrama Elétrico</span>
+</a>
